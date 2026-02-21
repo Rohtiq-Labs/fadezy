@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@import "./font.css";
+@import "./scollbar.css";
+
+:root {
+  /* Primary brand */
+  --color-primary: #7B69FF;
+  --color-primary-hover: #6A59F0;
+  --color-primary-light: #F3F0FF;
+
+  /* Accent (use sparingly) */
+  --color-accent: #C5FF00;
+
+  /* Neutrals */
+  --color-bg: #f0efeb;
+  --color-bg-alt: #F4F4F2;
+  --color-text: #111111;
+  --color-text-muted: #666666;
+  --color-border: #EAEAF0;
+
+  /* Footer (dark) */
+  --color-footer-bg: #111111;
+  --color-footer-text: #FFFFFF;
+  --color-footer-link: #7B69FF;
+
+  /* Design tokens */
+  --radius: 12px;
+  --radius-sm: 10px;
+  --radius-lg: 14px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --dvh: 1vh;
+}
+
+body {
+  overflow-x: clip;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  width: 100%;
+  overflow-y: auto;
+}
+
+@supports (width: 100dvh) {
+  :root {
+    --dvh: 1dvh;
+  }
+}
+
+/* ========== EXAMPLE COMPONENT STYLES ========== */
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Secondary button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+/* Card */
+.card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Pricing card */
+.pricing-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.pricing-card.popular {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.pricing-card .badge-popular {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.pricing-card .badge-new {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* Navbar */
+.navbar-saas {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar-saas .nav-link {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-saas .nav-link:hover,
+.navbar-saas .nav-link.active {
+  color: var(--color-primary);
+}
+
+/* Hero section layout */
+.hero-saas {
+  background-color: var(--color-bg);
+  padding: 80px 0 100px;
+}
+
+.hero-saas-alt {
+  background-color: var(--color-bg-alt);
+  padding: 80px 0 100px;
+}
+
+.hero-saas .hero-title {
+  color: var(--color-text);
+}
+
+.hero-saas .hero-subtitle {
+  color: var(--color-text-muted);
+}

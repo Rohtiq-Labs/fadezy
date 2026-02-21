@@ -1,0 +1,36 @@
+import { cn } from '@/lib/tailwind/cn';
+import { CSSProperties, FC, ReactNode, Ref } from 'react'
+
+interface Props{
+    children?: ReactNode,
+    className?: string,
+    style?: CSSProperties,
+    ref?: Ref<HTMLElement> | undefined,
+    id?: string,
+}
+
+const SectionContainer: FC<Props> = ({children,className,ref,style,id}) => {
+    return (
+        <section
+            id={id}
+            className={
+                cn(
+                    `
+                        px-[clamp(40px,calc(((100vw-1024px)/896*88)+40px),128px)]
+                        lg:px-[clamp(16px,calc(((100vw-360px)/664*24)+16px),40px)]
+                        mt-32 
+                        lg:mt-20
+                        w-full
+                    `,
+                    className
+                )
+            } 
+            ref={ref} 
+            style={style}
+        >
+            {children}
+        </section>
+    );
+};
+
+export default SectionContainer;
