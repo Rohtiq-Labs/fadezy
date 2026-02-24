@@ -16,7 +16,7 @@ const ParagraphBaseRelax: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-acumin
+                    font-acumin-wide-light
                     font-normal
                     [--paragraph-base-relax-font-size:18px]
                     

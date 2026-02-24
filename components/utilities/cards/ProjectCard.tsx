@@ -28,6 +28,7 @@ const ProjectCard: FC<Props> = ({description,index,mediaSrc="",mediaType,project
                                 alt={mediaSrc}
                                 fill
                                 className='object-cover'
+                                sizes="(max-width: 1024px) 100vw, 720px"
                             />
                         ) : (
                             <video 

@@ -15,7 +15,7 @@ const ParagraphBase: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-acumin
+                    font-acumin-wide-light
                     font-normal
                     [--paragraph-base-font-size:18px]
                     sm:[--paragraph-base-font-size:16px]

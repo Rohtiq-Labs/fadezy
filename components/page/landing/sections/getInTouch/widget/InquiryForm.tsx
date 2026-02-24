@@ -60,7 +60,7 @@ const InquiryForm: FC = () => {
       </label>
       <button
         type="submit"
-        className="w-fit font-acumin font-normal text-[18px] px-6 py-2 rounded bg-accent text-black hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-black"
+        className="w-fit font-acumin-wide-light font-normal text-[18px] px-6 py-2 rounded bg-accent text-black hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-black"
         aria-label="Send inquiry"
       >
         Send inquiry

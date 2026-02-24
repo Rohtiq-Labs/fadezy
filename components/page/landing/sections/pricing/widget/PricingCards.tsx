@@ -45,7 +45,7 @@ const PricingCard: FC<{
         </span>
       )}
       <div className="flex flex-col gap-6">
-        <HeadingFourthXl className="text-brand-text font-elza">
+        <HeadingFourthXl className="text-brand-text font-acumin-semi-cond">
           {pkg.name}
         </HeadingFourthXl>
         <ParagraphBaseRelax className="text-brand-text-muted text-base break-words">
@@ -70,7 +70,7 @@ const PricingCard: FC<{
         <Link
           href={pkg.ctaLink}
           className={cn(
-            "inline-flex items-center justify-center w-full py-3 px-6 rounded-saas font-acumin text-sm font-medium tracking-wide transition-all duration-200",
+            "inline-flex items-center justify-center w-full py-3 px-6 rounded-saas font-acumin-wide-light text-sm font-medium tracking-wide transition-all duration-200",
             "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-brand-bg",
             isHighlighted
               ? "bg-primary text-white hover:bg-primary-hover"

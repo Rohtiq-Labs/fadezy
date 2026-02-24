@@ -18,7 +18,7 @@ const DirectContactOptions: FC = () => {
     >
       <h2
         id="direct-contact-heading"
-        className="font-elza font-normal text-[clamp(24px,3vw,32px)] text-secondary"
+        className="font-blinker font-normal text-[clamp(24px,3vw,32px)] text-secondary"
       >
         {heading}
       </h2>
@@ -27,14 +27,14 @@ const DirectContactOptions: FC = () => {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center font-acumin font-semibold text-primary-dark px-8 py-3 rounded-sm bg-cta-gradient hover:opacity-95 transition-opacity w-fit"
+          className="inline-flex items-center font-acumin-wide-light font-semibold text-primary-dark px-8 py-3 rounded-sm bg-cta-gradient hover:opacity-95 transition-opacity w-fit"
           aria-label={`${whatsappLabel} - ${whatsappLink}`}
         >
           {whatsappLabel}
         </Link>
         <a
           href={`mailto:${emailAddress}`}
-          className="font-acumin text-accent hover:opacity-90 transition-opacity w-fit"
+          className="font-acumin-wide-light text-accent hover:opacity-90 transition-opacity w-fit"
           aria-label={`${emailLabel}: ${emailAddress}`}
         >
           {emailAddress}
@@ -43,7 +43,7 @@ const DirectContactOptions: FC = () => {
           href={instagramLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-acumin text-secondary/80 hover:text-accent transition-colors w-fit"
+          className="font-acumin-wide-light text-secondary/80 hover:text-accent transition-colors w-fit"
           aria-label={instagramLabel}
         >
           {instagramLabel}

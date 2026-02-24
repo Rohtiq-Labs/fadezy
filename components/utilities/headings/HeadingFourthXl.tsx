@@ -15,7 +15,7 @@ const HeadingFourthXl: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-elza
+                    font-blinker
                     font-normal
                     [--heading-fourth-xl-font-size:clamp(28px,calc(((100vw-1024px)/896*8)+28px),32px)]
                     text-[length:var(--heading-fourth-xl-font-size)] 

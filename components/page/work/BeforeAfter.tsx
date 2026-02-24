@@ -39,7 +39,7 @@ const BeforeAfter: FC = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full">
           <div className="flex flex-col gap-4">
-            <span className="font-acumin text-sm text-secondary/70 uppercase tracking-wider">
+            <span className="font-acumin-wide-light text-sm text-secondary/70 uppercase tracking-wider">
               {beforeLabel}
             </span>
             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-sm bg-primary-dark">
@@ -53,7 +53,7 @@ const BeforeAfter: FC = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <span className="font-acumin text-sm text-secondary/70 uppercase tracking-wider">
+            <span className="font-acumin-wide-light text-sm text-secondary/70 uppercase tracking-wider">
               {afterLabel}
             </span>
             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-sm bg-primary-dark">

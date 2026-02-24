@@ -22,7 +22,7 @@ const Article: FC = () => {
                             landingContents[lang]['get-in-touch'].contacts.map(({contact,type}, i) => {
                                 return (
                                     <span key={`${contact}-${i}`} className='text-nowrap'>
-                                        <span className='opacity-70'>{`${type}:`} </span>{contact}
+                                        <span className='opacity-70'>{`${type}:`} </span><span className='font-acumin-semi-cond'>{contact}</span>
                                     </span>
                                 )
                             })

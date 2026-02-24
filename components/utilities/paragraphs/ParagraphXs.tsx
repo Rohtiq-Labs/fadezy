@@ -15,7 +15,7 @@ const ParagraphXs: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-acumin
+                    font-acumin-wide-light
                     font-light
                     [--paragraph-xs-font-size:16px]
                     sm:[--paragraph-xs-font-size:14px]

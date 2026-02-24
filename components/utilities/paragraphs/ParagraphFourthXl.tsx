@@ -16,7 +16,7 @@ const ParagraphFourthXl: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-acumin
+                    font-acumin-wide-light
                     font-semibold
                     [--paragraph-fourth-xl-font-size:clamp(30px,calc(((100vw-1024px)/896*12)+30px),42px)]
                     lg:[--paragraph-fourth-xl-font-size:clamp(24px,calc(((100vw-360px)/664*6)+24px),30px)]

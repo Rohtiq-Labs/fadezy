@@ -72,7 +72,7 @@ const ServiceList: FC= () => {
                                 >
                                     <span className='inline-flex gap-[4.375vw]'>
                                         <HeadingSm className='w-[3ch]'>{`0${i + 1}.`}</HeadingSm>
-                                        <HeadingFourthXl className='max-w-[290px]'>{caption}</HeadingFourthXl>
+                                        <HeadingFourthXl className='max-w-[290px] font-acumin-semi-cond'>{caption}</HeadingFourthXl>
                                     </span>
                                     <ParagraphBaseRelax className='max-w-[450px] md:opacity-75 '>
                                         {description}

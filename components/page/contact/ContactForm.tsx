@@ -26,7 +26,7 @@ const ContactForm: FC = () => {
 
   const inputClass =
     "bg-white/10 border border-white/20 rounded-sm px-4 py-3 text-secondary placeholder-secondary/50 focus:outline-none focus:border-accent transition-colors w-full";
-  const labelClass = "font-acumin text-sm text-secondary/80 mb-2 block";
+  const labelClass = "font-acumin-wide-light text-sm text-secondary/80 mb-2 block";
 
   return (
     <form
@@ -95,7 +95,7 @@ const ContactForm: FC = () => {
       </label>
       <button
         type="submit"
-        className="w-fit font-acumin font-semibold text-primary-dark px-8 py-3 rounded-sm bg-cta-gradient hover:opacity-95 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
+        className="w-fit font-acumin-wide-light font-semibold text-primary-dark px-8 py-3 rounded-sm bg-cta-gradient hover:opacity-95 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
         aria-label={formLabels.submitButton}
       >
         {formLabels.submitButton}

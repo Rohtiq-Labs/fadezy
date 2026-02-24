@@ -18,7 +18,7 @@ const UnderlineButton: FC<Props> = ({className,onClick,ref,style,children}) => {
             className={
                 cn(
                     `
-                        font-acumin 
+                        font-acumin-wide-light 
                         font-normal
                         [--underline-button-font-size:18px]
                         text-[length:var(--underline-button-font-size)] 

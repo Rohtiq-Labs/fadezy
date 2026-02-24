@@ -16,7 +16,7 @@ const ParagraphXlRelax: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-acumin
+                    font-acumin-wide-light
                     font-normal
                     [--paragraph-xl-relax-font-size:clamp(18px,calc(((100vw-1024px)/896*4)+18px),22px)]
               

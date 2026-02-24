@@ -16,7 +16,7 @@ const ParagraphTwiceXl: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-acumin
+                    font-acumin-wide-light
                     font-medium
                     [--paragraph-twice-xl-font-size:clamp(20px,calc(((100vw-1024px)/896*6)+18px),24px)]
                     lg:[--paragraph-twice-xl-font-size:clamp(18px,calc(((100vw-360px)/664*2)+18px),20px)]

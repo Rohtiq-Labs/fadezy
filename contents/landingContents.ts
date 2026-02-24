@@ -158,11 +158,11 @@ export const landingContents: LandingContents = {
             description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence.",
             "3d-hover-card": {
                 caption: "Modern salon websites",
-                imgSrc: "/assets/code2.png"
+                imgSrc: "/assets/home%20page/barber%20saloon%20web.jpg"
             },
             "image-parallax": {
                 caption: "Brand presence",
-                imgSrc: "/assets/pexels-leeloothefirst-7818239.jpg"
+                imgSrc: "/assets/home%20page/Brand%20presence.jpg"
             },
             "parallax-scrolling":{
                 caption: "More ways we help you stand out.",
@@ -331,11 +331,11 @@ export const landingContents: LandingContents = {
             description: "نساعد الصالونات ومحلات الحلاقة على النمو عبر مواقع حديثة وحجوزات أونلاين ووجود علامة تجارية.",
             "3d-hover-card": {
                 caption: "مواقع صالونات حديثة",
-                imgSrc: "/assets/code2.png"
+                imgSrc: "/assets/home%20page/barber%20saloon%20web.jpg"
             },
             "image-parallax": {
                 caption: "الوجود والعلامة التجارية",
-                imgSrc: "/assets/pexels-leeloothefirst-7818239.jpg"
+                imgSrc: "/assets/home%20page/Brand%20presence.jpg"
             },
             "parallax-scrolling":{
                 caption: "المزيد من الطرق لتميزك.",

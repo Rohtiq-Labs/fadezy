@@ -16,7 +16,7 @@ const HeadingSm: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-elza
+                    font-blinker
                     font-normal
                     [--heading-sm-font-size:18px]
                     text-[length:var(--heading-sm-font-size)] 

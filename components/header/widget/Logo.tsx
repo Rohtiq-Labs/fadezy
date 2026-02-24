@@ -8,7 +8,7 @@ interface Props {
 const Logo: FC<Props> = ({ className }) => (
   <span
     className={cn(
-      "font-acumin-semi-cond text-2xl font-bold leading-0 tracking-[-0.03rem] text-brand-text",
+      "font-shanoy text-2xl font-normal tracking-wide text-brand-text",
       className
     )}
   >

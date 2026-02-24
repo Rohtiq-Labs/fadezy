@@ -20,9 +20,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        acumin: ["acumin-pro", "sans-serif"],
-        "acumin-semi-cond": ["acumin-pro-semi-condensed", "sans-serif"],
-        elza: ["elza", "sans-serif"],
+        shanoy: ["shanoy", "cursive"],
+        blinker: ["blinker", "sans-serif"],
+        "acumin-semi-cond": ["acumin-semi-cond", "sans-serif"],
+        "acumin-wide-light": ["acumin-wide-light", "sans-serif"],
+        "jameel-noori-nastaleeq": ["jameel-noori-nastaleeq", "serif"],
         "noto-sans-arabic": ["Noto Sans Arabic", "sans-serif"],
       },
       colors: {

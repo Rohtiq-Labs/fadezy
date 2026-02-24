@@ -17,7 +17,7 @@ const HeadingXsThick: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-elza
+                    font-blinker
                     font-medium
                     [--heading-xs-thick-font-size:16px]
                     text-[length:var(--heading-xs-thick-font-size)] 

@@ -16,7 +16,7 @@ const HeadingEighthXl: FC<Props> = ({children, ref, className, style}) => {
             ref={ref}
             className={cn(
                 `
-                    font-elza
+                    font-blinker
                     font-normal
                     [--heading-eighth-xl-font-size:clamp(64px,calc(((100vw-1024px)/896*26)+64px),90px)]
                     lg:[--heading-eighth-xl-font-size:clamp(48px,calc(((100vw-360px)/664*16)+48px),64px)]

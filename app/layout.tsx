@@ -20,8 +20,8 @@ export default async function RootLayout({
     const headerList = await headers();
     const lang = headerList.get(langQueryHeaderName) ?? "en";
     return (
-        <html lang={lang} >
-            <body>
+        <html lang={lang} suppressHydrationWarning>
+            <body suppressHydrationWarning>
                 <BlankLoadingContextProvider>
                     <FixedHeader />
                     {/* <SplashCursor /> */}

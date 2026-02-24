@@ -10,29 +10,40 @@ const TestimonialCard: FC<{
   author: string;
   role: string;
   imageSrc: string;
-}> = ({ quote, author, role, imageSrc }) => (
-  <blockquote
-    className="flex flex-col gap-4 p-4 lg:p-6 rounded-saas-lg bg-brand-bg border border-brand-border shadow-card min-w-0 w-full"
-    role="listitem"
-  >
-    <p className="text-brand-text-muted text-sm leading-relaxed break-words">&ldquo;{quote}&rdquo;</p>
-    <div className="flex items-center gap-3 min-w-0">
-      <div className="relative w-12 h-12 rounded-full overflow-hidden bg-brand-bg-alt shrink-0">
-        <Image
-          src={imageSrc}
-          alt=""
-          fill
-          className="object-cover"
-          sizes="48px"
-        />
+}> = ({ quote, author, role, imageSrc }) => {
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <blockquote
+      className="flex flex-col gap-4 p-4 lg:p-6 rounded-saas-lg bg-brand-bg border border-brand-border shadow-card min-w-0 w-full"
+      role="listitem"
+    >
+      <p className="text-brand-text-muted text-sm leading-relaxed break-words">&ldquo;{quote}&rdquo;</p>
+      <div className="flex items-center gap-3 min-w-0">
+        <div className="relative w-12 h-12 rounded-full overflow-hidden bg-primary/20 shrink-0 flex items-center justify-center">
+          {!imageError ? (
+            <Image
+              src={imageSrc}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="48px"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <span className="text-lg font-semibold text-primary" aria-hidden>
+              {author.charAt(0)}
+            </span>
+          )}
+        </div>
+        <div className="min-w-0">
+          <cite className="not-italic font-medium text-primary">{author}</cite>
+          <p className="text-xs text-brand-text-muted">{role}</p>
+        </div>
       </div>
-      <div className="min-w-0">
-        <cite className="not-italic font-medium text-primary">{author}</cite>
-        <p className="text-xs text-brand-text-muted">{role}</p>
-      </div>
-    </div>
-  </blockquote>
-);
+    </blockquote>
+  );
+};
 
 const ChevronLeft: FC<{ className?: string }> = ({ className }) => (
   <svg

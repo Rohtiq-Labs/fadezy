@@ -41,10 +41,10 @@ const ResultsImpact: FC = () => {
               key={`${item.stat}-${i}`}
               className="text-center sm:text-left"
             >
-              <p className="font-elza font-normal text-[clamp(36px,5vw,56px)] text-accent leading-none mb-2">
+              <p className="font-blinker font-normal text-[clamp(36px,5vw,56px)] text-accent leading-none mb-2">
                 {item.stat}
               </p>
-              <p className="font-acumin text-secondary/70 text-sm uppercase tracking-wider">
+              <p className="font-acumin-wide-light text-secondary/70 text-sm uppercase tracking-wider">
                 {item.label}
               </p>
             </div>
