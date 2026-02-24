@@ -7,9 +7,10 @@ interface Props{
     style?: CSSProperties,
     ref?: Ref<HTMLElement> | undefined,
     id?: string,
+    tight?: boolean,
 }
 
-const SectionContainer: FC<Props> = ({children,className,ref,style,id}) => {
+const SectionContainer: FC<Props> = ({children,className,ref,style,id,tight}) => {
     return (
         <section
             id={id}
@@ -18,10 +19,9 @@ const SectionContainer: FC<Props> = ({children,className,ref,style,id}) => {
                     `
                         px-[clamp(40px,calc(((100vw-1024px)/896*88)+40px),128px)]
                         lg:px-[clamp(16px,calc(((100vw-360px)/664*24)+16px),40px)]
-                        mt-32 
-                        lg:mt-20
                         w-full
                     `,
+                    tight ? "mt-12 lg:mt-14" : "mt-32 lg:mt-20",
                     className
                 )
             } 

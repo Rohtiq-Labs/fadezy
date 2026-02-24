@@ -11,7 +11,7 @@ const ServicesHero: FC = () => {
   const { headline, subheadline } = servicesContents[lang].hero;
 
   return (
-    <SectionContainer aria-label={headline}>
+    <SectionContainer aria-label={headline} className="pb-10">
       <ArticleContainer title={headline} description={subheadline} />
     </SectionContainer>
   );

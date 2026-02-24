@@ -15,7 +15,8 @@ const BeforeAfter: FC = () => {
 
   return (
     <SectionContainer
-      className="flex flex-col gap-[clamp(64px,calc(((100vw-768px)/1152*32)+48px),80px)]"
+      tight
+      className="flex flex-col gap-6"
       aria-labelledby="before-after-heading"
     >
       <ArticleContainer
@@ -37,12 +38,12 @@ const BeforeAfter: FC = () => {
         styleFrom={{ opacity: 0, transform: "translateY(24px)" }}
         styleTo={{ opacity: 1, transform: "translateY(0)" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full">
-          <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-6 w-full">
+          <div className="flex flex-col gap-1.5">
             <span className="font-acumin-wide-light text-sm text-secondary/70 uppercase tracking-wider">
               {beforeLabel}
             </span>
-            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-sm bg-primary-dark">
+            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-sm bg-primary-dark">
               <Image
                 src={beforeSrc}
                 alt="Before: outdated salon website"
@@ -52,11 +53,11 @@ const BeforeAfter: FC = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-1.5">
             <span className="font-acumin-wide-light text-sm text-secondary/70 uppercase tracking-wider">
               {afterLabel}
             </span>
-            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-sm bg-primary-dark">
+            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-sm bg-primary-dark">
               <Image
                 src={afterSrc}
                 alt="After: premium modern salon website"

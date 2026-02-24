@@ -17,7 +17,8 @@ const FeaturedProjects: FC = () => {
 
   return (
     <SectionContainer
-      className="flex flex-col gap-[clamp(64px,calc(((100vw-768px)/1152*32)+48px),80px)]"
+      tight
+      className="flex flex-col gap-6"
       aria-labelledby="featured-projects-heading"
     >
       <ArticleContainer
@@ -29,7 +30,7 @@ const FeaturedProjects: FC = () => {
         }}
       />
       <div
-        className="[--showcase-container-gap:clamp(32px,calc(((100vw-1024px)/896*32)+32px),64px)] grid grid-cols-2 lg:grid-cols-1 w-full gap-[var(--showcase-container-gap)]"
+        className="grid grid-cols-2 lg:grid-cols-1 w-full gap-6 lg:gap-8"
         aria-label={heading}
       >
         {projects.map((project, i) => (
