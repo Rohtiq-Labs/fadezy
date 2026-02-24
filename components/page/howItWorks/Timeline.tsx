@@ -12,6 +12,8 @@ const Timeline: FC = () => {
 
   return (
     <SectionContainer
+      tight
+      className="flex flex-col gap-6"
       aria-labelledby="timeline-heading"
     >
       <ArticleContainer

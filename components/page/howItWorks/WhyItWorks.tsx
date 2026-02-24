@@ -15,7 +15,8 @@ const WhyItWorks: FC = () => {
 
   return (
     <SectionContainer
-      className="flex flex-col gap-[clamp(64px,calc(((100vw-768px)/1152*32)+48px),80px)]"
+      tight
+      className="flex flex-col gap-6"
       aria-labelledby="why-it-works-heading"
     >
       <ArticleContainer
@@ -37,14 +38,14 @@ const WhyItWorks: FC = () => {
         styleFrom={{ opacity: 0, transform: "translateY(24px)" }}
         styleTo={{ opacity: 1, transform: "translateY(0)" }}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8 w-full">
+        <div className="grid grid-cols-3 md:grid-cols-1 gap-8 w-full">
           {items.map(({ title, description: desc }, i) => (
             <article
               key={`${title}-${i}`}
               className="flex flex-col gap-4"
               aria-label={title}
             >
-              <HeadingFourthXl className="text-accent">{title}</HeadingFourthXl>
+              <HeadingFourthXl className="font-acumin-semi-cond text-accent">{title}</HeadingFourthXl>
               <ParagraphBaseRelax className="text-secondary/80 max-w-sm">
                 {desc}
               </ParagraphBaseRelax>

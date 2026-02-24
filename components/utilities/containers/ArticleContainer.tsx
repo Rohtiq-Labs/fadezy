@@ -12,6 +12,7 @@ interface Props{
 
     className?: string,
     titleClassName?: string,
+    lineClassName?: string,
     style?: CSSProperties,
     ref?: Ref<HTMLElement> | undefined,
     
@@ -21,7 +22,7 @@ interface Props{
 
 const baseScrollTriggerVars = { start: () => "top center" as const, end: () => "top center" as const };
 
-const ArticleContainer: FC<Props> = ({className,description,ref,style,title,titleClassName,customTriggerRef,scrollTriggerVars}) => {
+const ArticleContainer: FC<Props> = ({className,description,ref,style,title,titleClassName,lineClassName,customTriggerRef,scrollTriggerVars}) => {
     const triggerRef = useRef<HTMLElement>(null);
     useImperativeHandle<(HTMLElement | null), (HTMLElement | null)>(ref, () => triggerRef.current, []);
 
@@ -48,14 +49,14 @@ const ArticleContainer: FC<Props> = ({className,description,ref,style,title,titl
             ref={triggerRef} 
             style={style} 
         >
-            <HeadingEighthXl className='relative w-fit'>
+            <HeadingEighthXl className={cn('relative w-fit', titleClassName)}>
                 <TextRevealScrollAnimation
                     splitText={title} 
                     splitTextMode='characters' 
                     splitTextClassName='relative inline-block'
                     duration={0.75}
                     stagger={0.025}
-                    className={cn('w-fit whitespace-nowrap lg:whitespace-normal', titleClassName)}
+                    className="w-fit whitespace-nowrap lg:whitespace-normal"
 
                     trigger={customTriggerRef ?? triggerRef}
                     scrollTriggerVars={titleTriggerVars}
@@ -77,7 +78,7 @@ const ArticleContainer: FC<Props> = ({className,description,ref,style,title,titl
 
                     className='absolute bottom-0 left-0 right-0'
                 >
-                    <Line className='w-full' />
+                    <Line className={cn('w-full', lineClassName)} />
                 </CustomScrollAnimation>
                 
             </HeadingEighthXl>

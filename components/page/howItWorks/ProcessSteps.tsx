@@ -16,7 +16,8 @@ const ProcessSteps: FC = () => {
 
   return (
     <SectionContainer
-      className="flex flex-col gap-[clamp(64px,calc(((100vw-768px)/1152*32)+48px),80px)]"
+      tight
+      className="flex flex-col gap-6"
       aria-labelledby="process-heading"
     >
       <ArticleContainer
@@ -27,11 +28,11 @@ const ProcessSteps: FC = () => {
           end: () => "top center"
         }}
       />
-      <ol className="flex flex-col gap-16 sm:gap-12" aria-label={heading}>
+      <ol className="flex flex-col gap-10 md:gap-8" aria-label={heading}>
         {steps.map(({ step, title, bullets }, i) => (
-          <li key={`${step}-${i}`} className="flex flex-col gap-6 sm:gap-4">
+          <li key={`${step}-${i}`} className="flex flex-col gap-4">
             <CustomScrollAnimation
-              className="block w-full flex flex-col gap-6 sm:gap-4"
+              className="block w-full flex flex-col gap-4"
               scrollTriggerVars={{
                 start: () => "center bottom",
                 end: () => "center bottom"
@@ -41,16 +42,16 @@ const ProcessSteps: FC = () => {
               styleFrom={{ opacity: 0, transform: "translateY(24px)" }}
               styleTo={{ opacity: 1, transform: "translateY(0)" }}
             >
-              <div className="flex items-baseline gap-6 sm:gap-4">
+              <div className="flex items-baseline gap-4">
                 <HeadingSm
-                  className="text-accent w-[3ch] shrink-0"
+                  className="font-acumin-semi-cond text-accent w-[3ch] shrink-0"
                   aria-hidden
                 >
                   {step}
                 </HeadingSm>
-                <HeadingFourthXl className="text-secondary">{title}</HeadingFourthXl>
+                <HeadingFourthXl className="font-acumin-semi-cond text-secondary">{title}</HeadingFourthXl>
               </div>
-              <ul className="flex flex-col gap-3 pl-[calc(3ch+24px)] sm:pl-[calc(3ch+16px)]">
+              <ul className="flex flex-col gap-3 pl-[calc(3ch+16px)]">
                 {bullets.map((bullet, j) => (
                   <li key={`${bullet}-${j}`} className="flex gap-2">
                     <span
