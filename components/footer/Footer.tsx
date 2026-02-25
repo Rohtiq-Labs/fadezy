@@ -87,7 +87,7 @@ const Footer: FC = () => {
           <div className="lg:col-span-1 flex flex-col gap-4 max-w-sm">
             <Link
               href="/"
-              aria-label="Fadezy home"
+              aria-label="FADEZY home"
               className={cn(linkBase, "w-fit text-footer-text hover:text-footer-link")}
             >
               <Logo className="text-inherit" />

@@ -9,7 +9,7 @@ const InquiryForm: FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Fadezy inquiry from ${name}`);
+    const subject = encodeURIComponent(`FADEZY inquiry from ${name}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );

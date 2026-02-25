@@ -62,7 +62,7 @@ export const footerContents: FooterContents = {
       }
     },
     legal: {
-      copyright: "© 2026 Fadezy, a brand of Rohtiq Labs. All rights reserved.",
+      copyright: "© 2026 FADEZY, a brand of Rohtiq Labs. All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Terms & Conditions"
     }
@@ -97,7 +97,7 @@ export const footerContents: FooterContents = {
       }
     },
     legal: {
-      copyright: "© 2026 Fadezy، علامة تجارية لـ Rohtiq Labs. جميع الحقوق محفوظة.",
+      copyright: "© 2026 FADEZY، علامة تجارية لـ Rohtiq Labs. جميع الحقوق محفوظة.",
       privacy: "سياسة الخصوصية",
       terms: "الشروط والأحكام"
     }

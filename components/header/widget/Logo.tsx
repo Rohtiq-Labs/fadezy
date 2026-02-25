@@ -8,11 +8,11 @@ interface Props {
 const Logo: FC<Props> = ({ className }) => (
   <span
     className={cn(
-      "font-shanoy text-2xl font-normal tracking-wide text-brand-text",
+      "font-shanoy text-2xl font-normal tracking-wide text-brand-text uppercase",
       className
     )}
   >
-    Fadezy
+    FADEZY
   </span>
 );
 

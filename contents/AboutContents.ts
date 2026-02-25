@@ -49,7 +49,7 @@ export type AboutContents = Record<
 export const aboutContents: AboutContents = {
   en: {
     hero: {
-      headline: "About Fadezy",
+      headline: "About FADEZY",
       subheadline:
         "Digital presence crafted exclusively for modern salons.",
       imgSrc: "/assets/pexels-soheilkmp-27413969.jpg"
@@ -57,7 +57,7 @@ export const aboutContents: AboutContents = {
     mission: {
       heading: "Our Mission",
       description:
-        "Fadezy was created to help salons elevate their online presence. We focus on quality, simplicity, and premium positioning. We specialize in the salon industry — not as a generic web agency, but as niche-focused experts who understand what high-end salons need."
+        "FADEZY was created to help salons elevate their online presence. We focus on quality, simplicity, and premium positioning. We specialize in the salon industry — not as a generic web agency, but as niche-focused experts who understand what high-end salons need."
     },
     whySalons: {
       heading: "Why We Focus Only on Salons",
@@ -83,7 +83,7 @@ export const aboutContents: AboutContents = {
     rohtiqLabs: {
       heading: "Under Rohtiq Labs",
       description:
-        "Fadezy operates under Rohtiq Labs, a digital innovation company. This partnership reinforces our technical expertise and credibility.",
+        "FADEZY operates under Rohtiq Labs, a digital innovation company. This partnership reinforces our technical expertise and credibility.",
       subtext: "Backed by the same team that builds cutting-edge digital products."
     },
     approach: {
@@ -117,7 +117,7 @@ export const aboutContents: AboutContents = {
   },
   ar: {
     hero: {
-      headline: "عن Fadezy",
+      headline: "عن FADEZY",
       subheadline:
         "حضور رقمي مصمم حصرياً لصالونات العصر الحديث.",
       imgSrc: "/assets/pexels-soheilkmp-27413969.jpg"
@@ -125,7 +125,7 @@ export const aboutContents: AboutContents = {
     mission: {
       heading: "مهمتنا",
       description:
-        "أُنشئت Fadezy لمساعدة الصالونات على رفع حضورها أونلاين. نركز على الجودة والبساطة والموقع الراقي. نختص في قطاع الصالونات — ليس كوكالة ويب عامة، بل كخبراء متخصصين يفهمون ما تحتاجه الصالونات الراقية."
+        "أُنشئت FADEZY لمساعدة الصالونات على رفع حضورها أونلاين. نركز على الجودة والبساطة والموقع الراقي. نختص في قطاع الصالونات — ليس كوكالة ويب عامة، بل كخبراء متخصصين يفهمون ما تحتاجه الصالونات الراقية."
     },
     whySalons: {
       heading: "لماذا نركز على الصالونات فقط",
@@ -151,7 +151,7 @@ export const aboutContents: AboutContents = {
     rohtiqLabs: {
       heading: "تحت مظلة Rohtiq Labs",
       description:
-        "تعمل Fadezy تحت مظلة Rohtiq Labs، شركة ابتكار رقمي. هذه الشراكة تعزز خبرتنا التقنية ومصداقيتنا.",
+        "تعمل FADEZY تحت مظلة Rohtiq Labs، شركة ابتكار رقمي. هذه الشراكة تعزز خبرتنا التقنية ومصداقيتنا.",
       subtext: "مدعومة بنفس الفريق الذي يبني منتجات رقمية متطورة."
     },
     approach: {

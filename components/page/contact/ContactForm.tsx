@@ -16,7 +16,7 @@ const ContactForm: FC = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const subject = encodeURIComponent(
-      `Fadezy - Free Preview Request from ${salonName}`
+      `FADEZY - Free Preview Request from ${salonName}`
     );
     const body = encodeURIComponent(
       `Salon Name: ${salonName}\nOwner Name: ${ownerName}\nEmail: ${email}\nWhatsApp: ${whatsapp}\n\nMessage:\n${message}`

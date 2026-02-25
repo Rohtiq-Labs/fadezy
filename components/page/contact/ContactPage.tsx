@@ -12,7 +12,7 @@ const ContactPage: FC = () => {
   return (
     <main
       role="main"
-      aria-label="Contact Fadezy"
+      aria-label="Contact FADEZY"
       className="flex flex-col w-full min-h-0"
     >
       <ContactHero />

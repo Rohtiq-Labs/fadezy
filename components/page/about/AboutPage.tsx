@@ -13,7 +13,7 @@ const AboutPage: FC = () => {
   return (
     <main
       role="main"
-      aria-label="About Fadezy"
+      aria-label="About FADEZY"
       className="flex flex-col w-full min-h-0"
     >
       <AboutHero />

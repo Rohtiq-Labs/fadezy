@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadataTags: Metadata = {
-  title: "Fadezy | Digital Agency for Barbershops & Salons",
+  title: "FADEZY | Digital Agency for Barbershops & Salons",
   description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence. Get your free demo today.",
   keywords: ["digital agency", "barbershop", "salon", "website", "online booking", "brand presence", "barbershop website", "salon marketing"],
-  publisher: "Fadezy",
-  authors: [{ name: "Fadezy", url: "https://fadezy.com" }],
+  publisher: "FADEZY",
+  authors: [{ name: "FADEZY", url: "https://fadezy.com" }],
   robots: "index, follow",
   icons: {
     icon: "/assets/icon.png",
@@ -26,9 +26,9 @@ export const metadataTags: Metadata = {
   category: "business",
   metadataBase: new URL("https://fadezy.com"),
   openGraph: {
-    siteName: "Fadezy",
+    siteName: "FADEZY",
     type: "website",
-    title: "Fadezy | Digital Agency for Barbershops & Salons",
+    title: "FADEZY | Digital Agency for Barbershops & Salons",
     description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence.",
     images: [{
       url: "/assets/thumbnail.png",
@@ -45,7 +45,7 @@ export const metadataTags: Metadata = {
     site: "@fadezy",
     creator: "@fadezy",
     card: "summary_large_image",
-    title: "Fadezy | Digital Agency for Barbershops & Salons",
+    title: "FADEZY | Digital Agency for Barbershops & Salons",
     description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence.",
     images: "/assets/thumbnail.png",
   }

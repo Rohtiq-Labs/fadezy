@@ -74,7 +74,7 @@ const FullScreenSlideTransition: FC<PageTransitionProps> = ({children, onAnimati
                     {...anim(slidesVariants)}
                     className='bg-white w-screen h-screen text-black uppercase flex justify-center items-center'
                 >
-                    <HeadingEighthXl>Fadezy</HeadingEighthXl>
+                    <HeadingEighthXl>FADEZY</HeadingEighthXl>
                 </motion.div>
             </motion.div>
     

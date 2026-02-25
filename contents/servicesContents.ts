@@ -94,7 +94,7 @@ export const servicesContents: ServicesContents = {
       ]
     },
     whyFadezy: {
-      heading: "Why Fadezy",
+      heading: "Why FADEZY",
       description: "Built for salons that demand the best.",
       items: [
         {
@@ -165,7 +165,7 @@ export const servicesContents: ServicesContents = {
       ]
     },
     whyFadezy: {
-      heading: "لماذا Fadezy",
+      heading: "لماذا FADEZY",
       description: "مصممة للصالونات التي تطلب الأفضل.",
       items: [
         {

@@ -255,7 +255,7 @@ export const landingContents: LandingContents = {
             prevLabel: "Previous testimonial",
             nextLabel: "Next testimonial",
             items: [
-                { quote: "Fadezy gave our barbershop a modern site and online booking. Clients love it.", author: "Alex M.", role: "Classic Cuts Barbershop", imageSrc: "/assets/pexels-leeloothefirst-7818239.jpg" },
+                { quote: "FADEZY gave our barbershop a modern site and online booking. Clients love it.", author: "Alex M.", role: "Classic Cuts Barbershop", imageSrc: "/assets/pexels-leeloothefirst-7818239.jpg" },
                 { quote: "Professional, fast, and they really understand the salon business.", author: "Sarah L.", role: "Luxe Hair Studio", imageSrc: "/assets/pexels-cottonbro-8721339.jpg" },
                 { quote: "Our new website brings in more bookings. Highly recommend.", author: "James K.", role: "The Gentleman's Salon", imageSrc: "/assets/pexels-cottonbro-8721318.jpg" }
             ]
@@ -433,7 +433,7 @@ export const landingContents: LandingContents = {
             prevLabel: "الشهادة السابقة",
             nextLabel: "الشهادة التالية",
             items: [
-                { quote: "صممت Fadezy لنا موقعاً حديثاً وحجوزات أونلاين، العملاء سعداء.", author: "Alex M.", role: "Classic Cuts Barbershop", imageSrc: "/assets/pexels-leeloothefirst-7818239.jpg" },
+                { quote: "صممت FADEZY لنا موقعاً حديثاً وحجوزات أونلاين، العملاء سعداء.", author: "Alex M.", role: "Classic Cuts Barbershop", imageSrc: "/assets/pexels-leeloothefirst-7818239.jpg" },
                 { quote: "احترافية وسرعة وفهم حقيقي لقطاع الصالونات.", author: "Sarah L.", role: "Luxe Hair Studio", imageSrc: "/assets/pexels-cottonbro-8721339.jpg" },
                 { quote: "الموقع الجديد زاد الحجوزات، ننصح به بشدة.", author: "James K.", role: "The Gentleman's Salon", imageSrc: "/assets/pexels-cottonbro-8721318.jpg" }
             ]
