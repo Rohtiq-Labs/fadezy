@@ -14,7 +14,7 @@ const HowItWorksCta: FC = () => {
   return (
     <SectionContainer
       tight
-      className="flex flex-col gap-12"
+      className="flex flex-col gap-12 pb-12"
       aria-labelledby="how-it-works-cta-heading"
     >
       <ArticleContainer

@@ -1,7 +1,5 @@
 import { SupportedLanguages } from "./supportedLanguagesData";
 
-export type FooterLink = { label: string; href: string };
-
 export type FooterContents = Record<
   SupportedLanguages,
   {
@@ -11,7 +9,6 @@ export type FooterContents = Record<
       contact: string;
       followUs: string;
     };
-    links: FooterLink[];
     contact: {
       email: string;
       phone: string;
@@ -42,14 +39,6 @@ export const footerContents: FooterContents = {
       contact: "Contact",
       followUs: "Follow Us"
     },
-    links: [
-      { label: "Home", href: "/" },
-      { label: "Services", href: "/services" },
-      { label: "Work", href: "/work" },
-      { label: "Pricing", href: "/#pricing" },
-      { label: "About", href: "/about" },
-      { label: "Contact", href: "/contact" }
-    ],
     contact: {
       email: EMAIL,
       phone: PHONE,
@@ -73,7 +62,7 @@ export const footerContents: FooterContents = {
       }
     },
     legal: {
-      copyright: "© 2026 Fadezy. All rights reserved.",
+      copyright: "© 2026 Fadezy, a brand of Rohtiq Labs. All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Terms & Conditions"
     }
@@ -85,14 +74,6 @@ export const footerContents: FooterContents = {
       contact: "تواصل",
       followUs: "تابعنا"
     },
-    links: [
-      { label: "الرئيسية", href: "/" },
-      { label: "الخدمات", href: "/services" },
-      { label: "أعمالنا", href: "/work" },
-      { label: "الأسعار", href: "/#pricing" },
-      { label: "من نحن", href: "/about" },
-      { label: "تواصل", href: "/contact" }
-    ],
     contact: {
       email: EMAIL,
       phone: PHONE,
@@ -116,7 +97,7 @@ export const footerContents: FooterContents = {
       }
     },
     legal: {
-      copyright: "© 2026 Fadezy. جميع الحقوق محفوظة.",
+      copyright: "© 2026 Fadezy، علامة تجارية لـ Rohtiq Labs. جميع الحقوق محفوظة.",
       privacy: "سياسة الخصوصية",
       terms: "الشروط والأحكام"
     }

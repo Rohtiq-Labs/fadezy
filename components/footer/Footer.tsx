@@ -5,6 +5,8 @@ import Link from "next/link";
 import SpacingLgContainer from "@/components/utilities/containers/SpacingLgContainer";
 import { useCurrentLanguages } from "@/contents/languageSupportHooks";
 import { footerContents } from "@/contents/footerContents";
+import { navContents } from "@/contents/navContents";
+import { routes } from "@/routes/routes";
 import Logo from "@/components/header/widget/Logo";
 import { cn } from "@/lib/tailwind/cn";
 
@@ -71,16 +73,17 @@ const FacebookIcon: FC<{ className?: string }> = ({ className }) => (
 
 const Footer: FC = () => {
   const lang = useCurrentLanguages();
-  const { tagline, sections, links, contact, social, legal } = footerContents[lang];
+  const { tagline, sections, contact, social, legal } = footerContents[lang];
+  const labels = navContents[lang];
 
   return (
     <footer
       role="contentinfo"
       aria-label="Site footer"
-      className="bg-footer-bg text-footer-text border-t border-white/10"
+      className="bg-footer-bg text-footer-text border-t border-white/10 pt-6 lg:pt-8"
     >
-      <SpacingLgContainer className="py-16 lg:py-20">
-        <div className="grid grid-cols-4 lg:grid-cols-2 md:grid-cols-1 gap-12 lg:gap-16">
+      <SpacingLgContainer className="pt-6 pb-10 lg:pt-8 lg:pb-12">
+        <div className="grid grid-cols-4 lg:grid-cols-2 md:grid-cols-1 gap-6 lg:gap-8">
           <div className="lg:col-span-1 flex flex-col gap-4 max-w-sm">
             <Link
               href="/"
@@ -102,13 +105,13 @@ const Footer: FC = () => {
               {sections.quickLinks}
             </h3>
             <ul className="flex flex-col gap-3">
-              {links.map(({ label, href }) => (
-                <li key={href}>
+              {routes.map(({ key, path }) => (
+                <li key={path}>
                   <Link
-                    href={href}
+                    href={path}
                     className={cn(linkBase, "text-sm")}
                   >
-                    {label}
+                    {labels[key]}
                   </Link>
                 </li>
               ))}
@@ -194,10 +197,10 @@ const Footer: FC = () => {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col items-center justify-center text-center gap-3">
           <span className="text-white/50 text-sm">{legal.copyright}</span>
           {(legal.privacy || legal.terms) && (
-            <div className="flex gap-6">
+            <div className="flex flex-row flex-wrap items-center justify-center gap-4">
               {legal.privacy && (
                 <Link
                   href="/privacy"
