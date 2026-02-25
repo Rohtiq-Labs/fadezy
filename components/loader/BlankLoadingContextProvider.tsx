@@ -192,7 +192,7 @@ const BlankLoadingContextProvider: FC<Props> = ({children}) => {
                                 }
                             }}
                         >
-                            <HeadingEighthXl>Fadezy</HeadingEighthXl>
+                            <HeadingEighthXl className="font-shanoy uppercase">Fadezy</HeadingEighthXl>
                         </motion.div>
                     )
                 }
