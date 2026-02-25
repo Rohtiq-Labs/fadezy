@@ -49,6 +49,16 @@ body {
   }
 }
 
+/* Header bar: padding-x matches SpacingLgContainer for logo alignment */
+.header-bar {
+  --header-padding-x: clamp(40px, calc(((100vw - 1024px) / 896 * 24) + 40px), 64px);
+}
+@media (max-width: 1024px) {
+  .header-bar {
+    --header-padding-x: clamp(16px, calc(((100vw - 360px) / 664 * 24) + 16px), 40px);
+  }
+}
+
 /* ========== EXAMPLE COMPONENT STYLES ========== */
 
 /* Primary button */

@@ -20,7 +20,7 @@ const NavMenu: FC<Props> = ({navMenuActive,SetNavMenuActive}) => {
     return (
         <nav
             className={cn(
-                "absolute inset-0 z-[-1] pointer-events-auto bg-brand-bg sm:bottom-auto sm:h-[calc(var(--dvh)*100)] sm:border-l sm:border-brand-border",
+                "absolute inset-0 z-[-1] pointer-events-auto bg-brand-bg/95 backdrop-blur-md sm:bottom-auto sm:h-[calc(var(--dvh)*100)] sm:border-l sm:border-brand-border/70",
                 {
                     "translate-y-0 sm:translate-x-0": navMenuActive,
                     "-translate-y-full sm:translate-y-0 sm:translate-x-full": !navMenuActive,
