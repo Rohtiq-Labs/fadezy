@@ -58,6 +58,9 @@ module.exports = {
         card: "var(--shadow-card)",
         "card-hover": "var(--shadow-card-hover)",
       },
+      backgroundImage: {
+        "cta-gradient": "var(--color-cta-gradient)",
+      },
     },
   },
   variants: {

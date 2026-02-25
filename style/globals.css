@@ -5,25 +5,25 @@
 @import "./scollbar.css";
 
 :root {
-  /* Primary brand */
-  --color-primary: #7B69FF;
-  --color-primary-hover: #6A59F0;
-  --color-primary-light: #F3F0FF;
+  /* Base: dark #0a0a0a, light #f0efeb. Highlight: #1290a9 + similar shades for contrast. */
+  --color-primary: #1290a9;
+  --color-primary-hover: #0e7a8f;
+  --color-primary-light: #e6f6f9;
 
-  /* Accent (use sparingly) */
-  --color-accent: #C5FF00;
-
+  --color-accent: #1290a9;
   /* Neutrals */
+
   --color-bg: #f0efeb;
   --color-bg-alt: #F4F4F2;
-  --color-text: #111111;
+  --color-text: #0a0a0a;
   --color-text-muted: #666666;
   --color-border: #EAEAF0;
 
-  /* Footer (dark) */
-  --color-footer-bg: #111111;
+  --color-footer-bg: #0a0a0a;
   --color-footer-text: #FFFFFF;
-  --color-footer-link: #7B69FF;
+  --color-footer-link: #1290a9;
+
+  --color-cta-gradient: linear-gradient(to right, #1290a9, #0e7a8f);
 
   /* Design tokens */
   --radius: 12px;
