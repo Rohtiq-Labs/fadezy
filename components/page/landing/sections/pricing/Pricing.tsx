@@ -7,7 +7,8 @@ const Pricing: FC = () => {
   return (
     <SectionContainer
       id="pricing"
-      className="flex flex-col gap-10 md:gap-12 min-w-0 overflow-x-hidden"
+      tight
+      className="flex flex-col gap-8 md:gap-10 min-w-0 overflow-x-hidden pb-12"
     >
       <Article />
       <PricingCards />

@@ -24,7 +24,7 @@ const PricingCard: FC<{
     <article
       role="listitem"
       className={cn(
-        "relative flex flex-col p-6 lg:p-8 rounded-saas-lg border transition-all duration-300 min-w-0 w-full",
+        "relative flex flex-col min-h-[380px] p-6 lg:p-8 rounded-saas-lg border transition-all duration-300 min-w-0 w-full",
         "bg-brand-bg shadow-card hover:shadow-card-hover",
         isHighlighted
           ? "border-primary ring-1 ring-primary"
@@ -69,13 +69,7 @@ const PricingCard: FC<{
       <div className="mt-auto pt-8">
         <Link
           href={pkg.ctaLink}
-          className={cn(
-            "inline-flex items-center justify-center w-full py-3 px-6 rounded-saas font-acumin-wide-light text-sm font-medium tracking-wide transition-all duration-200",
-            "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-brand-bg",
-            isHighlighted
-              ? "bg-primary text-white hover:bg-primary-hover"
-              : "border-2 border-brand-border text-primary hover:border-primary hover:bg-primary-light"
-          )}
+          className="inline-flex items-center justify-center w-full py-3 px-6 rounded-saas font-acumin-wide-light text-sm font-medium tracking-wide transition-all duration-200 bg-primary text-white hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-brand-bg"
         >
           {pkg.ctaText}
         </Link>
@@ -90,27 +84,14 @@ const PricingCards: FC = () => {
     landingContents[lang].pricing;
 
   return (
-    <div className="flex flex-col gap-10 md:gap-16 mt-12 md:mt-16 min-w-0">
+    <div className="flex flex-col gap-8 lg:gap-10 mt-10 md:mt-12 min-w-0">
       <div
-        className={cn(
-          "[--showcase-container-gap:clamp(32px,calc(((100vw-1024px)/896*32)+32px),64px)]",
-          "grid grid-cols-2 lg:grid-cols-1 w-full gap-[var(--showcase-container-gap)] min-w-0 overflow-hidden"
-        )}
+        className="grid grid-cols-3 lg:grid-cols-1 w-full gap-8 lg:gap-10 min-w-0"
         role="list"
         aria-label="Pricing packages"
       >
         {pricingPackages.map((pkg, i) => (
-          <div
-            key={`pricing-${i}-${pkg.name}`}
-            className={cn(
-              "w-full max-w-[720px] flex flex-col overflow-auto",
-              i % 2 === 0
-                ? "justify-self-start lg:justify-self-center"
-                : "justify-self-end lg:justify-self-center"
-            )}
-          >
-            <PricingCard pkg={pkg} />
-          </div>
+          <PricingCard key={`pricing-${i}-${pkg.name}`} pkg={pkg} />
         ))}
       </div>
 
