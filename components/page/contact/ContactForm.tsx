@@ -25,15 +25,16 @@ const ContactForm: FC = () => {
   };
 
   const inputClass =
-    "bg-white/10 border border-white/20 rounded-sm px-4 py-3 text-secondary placeholder-secondary/50 focus:outline-none focus:border-accent transition-colors w-full";
-  const labelClass = "font-acumin-wide-light text-sm text-secondary/80 mb-2 block";
+    "bg-white border border-brand-border rounded-sm px-4 py-3 min-h-[44px] text-primary-dark placeholder:text-secondary/60 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors w-full";
+  const labelClass = "font-acumin-wide-light text-sm text-secondary mb-2 block";
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-5 w-full max-w-md"
-      aria-label="Contact form"
-    >
+    <div className="w-full max-w-2xl lg:max-w-md rounded-sm border border-brand-border bg-brand-bg-alt p-6 shadow-card">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 md:gap-5 w-full"
+        aria-label="Contact form"
+      >
       <label className="flex flex-col">
         <span className={labelClass}>{formLabels.salonNameLabel}</span>
         <input
@@ -95,12 +96,13 @@ const ContactForm: FC = () => {
       </label>
       <button
         type="submit"
-        className="w-fit font-acumin-wide-light font-semibold text-primary-dark px-8 py-3 rounded-sm bg-cta-gradient hover:opacity-95 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
+        className="w-full sm:w-fit min-h-[44px] flex items-center justify-center font-acumin-wide-light font-semibold text-primary-dark px-8 py-3 rounded-sm bg-cta-gradient hover:opacity-95 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-brand-bg"
         aria-label={formLabels.submitButton}
       >
         {formLabels.submitButton}
       </button>
     </form>
+    </div>
   );
 };
 

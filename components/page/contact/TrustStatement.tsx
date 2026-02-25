@@ -12,6 +12,7 @@ const TrustStatement: FC = () => {
 
   return (
     <SectionContainer
+      tight
       className="flex flex-col items-center text-center"
       aria-label="Trust statement"
     >

@@ -12,7 +12,8 @@ const OurMission: FC = () => {
 
   return (
     <SectionContainer
-      className="flex flex-col gap-[clamp(64px,calc(((100vw-768px)/1152*32)+48px),80px)]"
+      tight
+      className="flex flex-col gap-6"
       aria-labelledby="mission-heading"
     >
       <ArticleContainer

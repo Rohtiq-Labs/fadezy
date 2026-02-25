@@ -6,9 +6,11 @@ import InquiryForm from './widget/InquiryForm';
 
 const GetInTouch: FC = () => {
   return (
-    <SectionContainer id="get-in-touch" className="relative ">
+    <SectionContainer id="get-in-touch" className="relative flex flex-col">
       <Article />
-      <InquiryForm />
+      <div className="w-full flex justify-center">
+        <InquiryForm />
+      </div>
       <HandImage />
     </SectionContainer>
   );
