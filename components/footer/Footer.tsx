@@ -33,44 +33,6 @@ const InstagramIcon: FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-const LinkedInIcon: FC<{ className?: string }> = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const FacebookIcon: FC<{ className?: string }> = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden
-  >
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-
 const Footer: FC = () => {
   const lang = useCurrentLanguages();
   const { tagline, sections, contact, social, legal } = footerContents[lang];
@@ -125,14 +87,6 @@ const Footer: FC = () => {
             <ul className="flex flex-col gap-3 text-sm text-white/70">
               <li>
                 <a
-                  href={`mailto:${contact.email}`}
-                  className={linkBase}
-                >
-                  {contact.email}
-                </a>
-              </li>
-              <li>
-                <a
                   href={`tel:${contact.phone.replace(/\s/g, "")}`}
                   className={linkBase}
                 >
@@ -168,30 +122,6 @@ const Footer: FC = () => {
                 )}
               >
                 <InstagramIcon />
-              </a>
-              <a
-                href={social.linkedin.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.linkedin.label}
-                className={cn(
-                  linkBase,
-                  "p-2 -m-2 text-white/70 hover:text-footer-link"
-                )}
-              >
-                <LinkedInIcon />
-              </a>
-              <a
-                href={social.facebook.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.facebook.label}
-                className={cn(
-                  linkBase,
-                  "p-2 -m-2 text-white/70 hover:text-footer-link"
-                )}
-              >
-                <FacebookIcon />
               </a>
             </div>
           </div>

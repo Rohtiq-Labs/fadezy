@@ -8,8 +8,8 @@ export const metadataTags: Metadata = {
   authors: [{ name: "FADEZY", url: "https://fadezy.com" }],
   robots: "index, follow",
   icons: {
-    icon: "/assets/icon.png",
-    apple: "/assets/icon.png"
+    icon: "/assets/icon%20white%20blck%20logo.png",
+    apple: "/assets/icon%20white%20blck%20logo.png"
   },
   formatDetection: {
     email: false,

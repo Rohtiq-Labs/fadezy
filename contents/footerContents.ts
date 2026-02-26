@@ -27,9 +27,8 @@ export type FooterContents = Record<
   }
 >;
 
-const WHATSAPP_NUMBER = "971501234567";
-const EMAIL = "contact@fadezy.com";
-const PHONE = "+971 50 123 4567";
+const WHATSAPP_NUMBER = "923239675581";
+const PHONE = "+92 323 9675581";
 
 export const footerContents: FooterContents = {
   en: {
@@ -40,7 +39,7 @@ export const footerContents: FooterContents = {
       followUs: "Follow Us"
     },
     contact: {
-      email: EMAIL,
+      email: "",
       phone: PHONE,
       whatsapp: {
         label: "WhatsApp",
@@ -50,16 +49,10 @@ export const footerContents: FooterContents = {
     social: {
       instagram: {
         label: "Instagram",
-        url: "https://www.instagram.com/fadezy"
+        url: "https://www.instagram.com/fadezy.rl/"
       },
-      linkedin: {
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/company/fadezy"
-      },
-      facebook: {
-        label: "Facebook",
-        url: "https://www.facebook.com/fadezy"
-      }
+      linkedin: { label: "LinkedIn", url: "" },
+      facebook: { label: "Facebook", url: "" }
     },
     legal: {
       copyright: "© 2026 FADEZY, a brand of Rohtiq Labs. All rights reserved.",
@@ -75,7 +68,7 @@ export const footerContents: FooterContents = {
       followUs: "تابعنا"
     },
     contact: {
-      email: EMAIL,
+      email: "",
       phone: PHONE,
       whatsapp: {
         label: "واتساب",
@@ -85,16 +78,10 @@ export const footerContents: FooterContents = {
     social: {
       instagram: {
         label: "انستغرام",
-        url: "https://www.instagram.com/fadezy"
+        url: "https://www.instagram.com/fadezy.rl/"
       },
-      linkedin: {
-        label: "لينكدإن",
-        url: "https://www.linkedin.com/company/fadezy"
-      },
-      facebook: {
-        label: "فيسبوك",
-        url: "https://www.facebook.com/fadezy"
-      }
+      linkedin: { label: "لينكدإن", url: "" },
+      facebook: { label: "فيسبوك", url: "" }
     },
     legal: {
       copyright: "© 2026 FADEZY، علامة تجارية لـ Rohtiq Labs. جميع الحقوق محفوظة.",

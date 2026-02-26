@@ -62,7 +62,7 @@ export const contactContents: ContactContents = {
         emailLabel: "Email",
         emailPlaceholder: "your@email.com",
         whatsappLabel: "WhatsApp Number",
-        whatsappPlaceholder: "+971 50 123 4567",
+        whatsappPlaceholder: "+92 323 9675581",
         messageLabel: "Message",
         messagePlaceholder: "Tell us about your salon and what you're looking for...",
         submitButton: "Request Free Preview"
@@ -71,11 +71,11 @@ export const contactContents: ContactContents = {
     directContact: {
       heading: "Or reach us directly",
       whatsappLabel: "WhatsApp",
-      whatsappLink: "https://wa.me/1234567890",
+      whatsappLink: "https://wa.me/923239675581",
       emailLabel: "Email",
-      emailAddress: "hello@fadezy.com",
+      emailAddress: "",
       instagramLabel: "Instagram",
-      instagramLink: "https://instagram.com/fadezy"
+      instagramLink: "https://www.instagram.com/fadezy.rl/"
     },
     trustStatement: {
       text: "We respond within 24 hours. No obligation. No upfront commitment."
@@ -104,7 +104,7 @@ export const contactContents: ContactContents = {
         emailLabel: "البريد الإلكتروني",
         emailPlaceholder: "your@email.com",
         whatsappLabel: "رقم واتساب",
-        whatsappPlaceholder: "+971 50 123 4567",
+        whatsappPlaceholder: "+92 323 9675581",
         messageLabel: "الرسالة",
         messagePlaceholder: "أخبرنا عن صالونك وما تبحث عنه...",
         submitButton: "اطلب معاينة مجانية"
@@ -113,11 +113,11 @@ export const contactContents: ContactContents = {
     directContact: {
       heading: "أو تواصل معنا مباشرة",
       whatsappLabel: "واتساب",
-      whatsappLink: "https://wa.me/1234567890",
+      whatsappLink: "https://wa.me/923239675581",
       emailLabel: "البريد",
-      emailAddress: "hello@fadezy.com",
+      emailAddress: "",
       instagramLabel: "إنستغرام",
-      instagramLink: "https://instagram.com/fadezy"
+      instagramLink: "https://www.instagram.com/fadezy.rl/"
     },
     trustStatement: {
       text: "نرد خلال 24 ساعة. بدون التزام. بدون دفعة مقدمة."

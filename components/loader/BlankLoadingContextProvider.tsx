@@ -1,5 +1,5 @@
 "use client"
-import { createContext, FC, ReactNode, useCallback, useContext, useEffect, useRef, useState } from 'react'
+import { createContext, FC, ReactNode, useContext, useEffect, useRef, useState } from 'react'
 import HeadingEighthXl from '../utilities/headings/HeadingEighthXl';
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -50,7 +50,7 @@ const BlankLoadingContextProvider: FC<Props> = ({children}) => {
         setEvents({...eventMap});
     },[]);
 
-    const onAllLoaded = useCallback(() => {
+    const onAllLoaded = () => {
         if(!isLoaded){
         const isAllLoaded = loadedListRef.current.every(loaded => loaded);
                         
@@ -63,7 +63,7 @@ const BlankLoadingContextProvider: FC<Props> = ({children}) => {
             }
         }
  
-    },[isLoaded, events]);
+    }
     useEffect(() => {
 
         const videoElements = document.querySelectorAll("video[autoPlay='']") as NodeListOf<HTMLVideoElement>;
@@ -123,7 +123,7 @@ const BlankLoadingContextProvider: FC<Props> = ({children}) => {
             document.dispatchEvent(events.loadstart);
         }
         
-    },[events, onAllLoaded]);
+    },[events]);
 
     useEffect(() => {
         const timer = setTimeout(() => {

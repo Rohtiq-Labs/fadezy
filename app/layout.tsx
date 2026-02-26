@@ -5,6 +5,7 @@ import AnimatePresenceContextProvider from "@/lib/framerMotion/AnimatePresenceCo
 import { headers } from "next/headers";
 import { langQueryHeaderName } from "@/contents/supportedLanguagesData";
 import FixedHeader from "@/components/header/FixedHeader";
+import WhatsAppFloatingIcon from "@/components/utilities/WhatsAppFloatingIcon";
 import BlankLoadingContextProvider from "@/components/loader/BlankLoadingContextProvider";
 // import SplashCursor from "@/components/utilities/cursons/SplashCursor";
 import { metadataTags } from "@/metadatas/metadata";
@@ -24,6 +25,7 @@ export default async function RootLayout({
             <body suppressHydrationWarning>
                 <BlankLoadingContextProvider>
                     <FixedHeader />
+                    <WhatsAppFloatingIcon />
                     {/* <SplashCursor /> */}
                     <GsapPluginRegisterWrapper>
                         <AnimatePresenceContextProvider pageTransitionType="none" mode="popLayout">
