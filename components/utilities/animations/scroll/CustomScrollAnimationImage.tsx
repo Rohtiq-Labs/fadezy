@@ -117,7 +117,7 @@ const CustomScrollAnimationImage: FC<Props> = ({
             ctx.revert();
         }
      
-    },[scrollTriggerVars,delay,duration,ease,stagger,styleTo,trigger,endTrigger,pin])
+    },[scrollTriggerVars,delay,duration,ease,stagger,styleTo,trigger,endTrigger,pin,blindFlipping])
 
 
     return (

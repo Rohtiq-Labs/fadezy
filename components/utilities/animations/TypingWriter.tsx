@@ -1,4 +1,4 @@
-import React,{FC, useEffect,useState} from 'react'
+import React,{FC, useCallback, useEffect, useState} from 'react'
 
 import { motion, steps } from "framer-motion"
 interface Props{
@@ -76,7 +76,7 @@ const TypingWriter: FC<Props> = ({
     const [currentTextIndex,setCurrentTextIndex] = useState(0);
     const [startDelay,setStartDelay] = useState(startingDelay);
 
-    const runTextAnimation = () => {
+    const runTextAnimation = useCallback(() => {
         const currentText = Array.isArray(textProps) ? textProps[currentTextIndex] : textProps; 
         setTimeout(() => {
             
@@ -100,11 +100,11 @@ const TypingWriter: FC<Props> = ({
                 }
             });
         },startDelay)
-    }
+    },[currentTextIndex, textProps, typingSpeed, beforeNextLineDelay, startDelay, textOutput, onAnimationEnd, infinite]);
 
     useEffect(() => {
         runTextAnimation();
-    },[currentTextIndex]);
+    },[runTextAnimation]);
 
 
 

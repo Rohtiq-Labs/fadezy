@@ -3,8 +3,6 @@ import { LayoutRouterContext } from 'next/dist/shared/lib/app-router-context.sha
 import { createContext, FC, ReactNode, useContext, useEffect, useRef, useState } from 'react'
 import { AnimatePresence } from "framer-motion"
 import { usePathname } from 'next/navigation';
-import NoneTransition from './pageTransitions/NoneTransition';
-import { PageTransitionProps } from './pageTransitions/types/PageTransitionProps';
 import FullScreenSlideTransition from './pageTransitions/FullScreenSlideTransition';
 
 export type PageTransitionType = "none" | "FullScreenSlide"

@@ -3,7 +3,6 @@
 import { FC } from 'react'
 import Hero from './sections/hero/Hero';
 import WhatIDo from './sections/whatIDo/WhatIDo';
-import FullScreenTransition from './sections/fullScreenTransition/FullScreenTransition';
 import Projects from './sections/projects/Projects';
 import Services from './sections/services/Services';
 import Pricing from './sections/pricing/Pricing';
