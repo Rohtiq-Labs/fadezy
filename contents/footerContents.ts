@@ -20,7 +20,10 @@ export type FooterContents = Record<
       facebook: { label: string; url: string };
     };
     legal: {
-      copyright: string;
+      copyrightPrefix: string;
+      rohtiqLabsLabel: string;
+      copyrightSuffix: string;
+      rohtiqLabsUrl: string;
       privacy?: string;
       terms?: string;
     };
@@ -62,7 +65,10 @@ export const footerContents: FooterContents = {
       }
     },
     legal: {
-      copyright: "© 2026 FADEZY, a brand of Rohtiq Labs. All rights reserved.",
+      copyrightPrefix: "© 2026 FADEZY, a brand of ",
+      rohtiqLabsLabel: "Rohtiq Labs",
+      copyrightSuffix: ". All rights reserved.",
+      rohtiqLabsUrl: "https://www.rohtiqlabs.com/en",
       privacy: "Privacy Policy",
       terms: "Terms & Conditions"
     }
@@ -97,7 +103,10 @@ export const footerContents: FooterContents = {
       }
     },
     legal: {
-      copyright: "© 2026 FADEZY، علامة تجارية لـ Rohtiq Labs. جميع الحقوق محفوظة.",
+      copyrightPrefix: "© 2026 FADEZY، علامة تجارية لـ ",
+      rohtiqLabsLabel: "Rohtiq Labs",
+      copyrightSuffix: ". جميع الحقوق محفوظة.",
+      rohtiqLabsUrl: "https://www.rohtiqlabs.com/en",
       privacy: "سياسة الخصوصية",
       terms: "الشروط والأحكام"
     }

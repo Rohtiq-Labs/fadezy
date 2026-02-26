@@ -154,26 +154,26 @@ export const landingContents: LandingContents = {
             description: "Barbershop and salon websites we've built. Modern, fast, and built to convert.",
             projects: [
                 {
-                    caption: "CLASSIC CUTS BARBERSHOP",
+                    caption: "THE FADE ROOM",
                     videoSrc: "/assets/projectThumbnail/fade.png",
                     description: "Here’A sleek barbershop site with online booking, service menu, and gallery.",
                     projectLink: "#"
                 },
                 {
-                    caption: "THE GENTLEMAN'S SALON",
+                    caption: "HAIR MASTER",
                     videoSrc: "/assets/projectThumbnail/hairmaster.jpg",
                     description: "Here’s a Premium salon website with brand storytelling, team section, and easy booking integration.’",
                     projectLink: "#"
                 },
                 {
-                    caption: "FADE & CO BARBERSHOP",
+                    caption: "TRENDZ HAIR SALON",
                     videoSrc: "/assets/projectThumbnail/trendz.jpeg",
                     description: "Modern barbershop site with services, pricing, and WhatsApp contact. Mobile-first for clients on the go.",
                     projectLink: "#"
                 },
                 {
-                    caption: "LUXE HAIR STUDIO",
-                    videoSrc: "/assets/projectThumbnail/todo.jpg",
+                    caption: "NAZIH GENTS SALON",
+                    videoSrc: "/assets/projectThumbnail/nazih.png",
                     description: "Here’Salon website with portfolio gallery, stylist profiles, and online appointment booking.",
                     projectLink: "#"
                 },

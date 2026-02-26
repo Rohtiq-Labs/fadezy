@@ -198,7 +198,19 @@ const Footer: FC = () => {
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col items-center justify-center text-center gap-3">
-          <span className="text-white/50 text-sm">{legal.copyright}</span>
+          <span className="text-white/50 text-sm">
+            {legal.copyrightPrefix}
+            <a
+              href={legal.rohtiqLabsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 underline"
+              aria-label="Rohtiq Labs"
+            >
+              {legal.rohtiqLabsLabel}
+            </a>
+            {legal.copyrightSuffix}
+          </span>
           {(legal.privacy || legal.terms) && (
             <div className="flex flex-row flex-wrap items-center justify-center gap-4">
               {legal.privacy && (
