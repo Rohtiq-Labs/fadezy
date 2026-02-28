@@ -173,13 +173,8 @@ export const landingContents: LandingContents = {
                 },
                 {
                     caption: "NAZIH GENTS SALON",
-<<<<<<< HEAD
-                    videoSrc: "/assets/projectThumbnail/nazih.png",
-                    description: "Here’Salon website with portfolio gallery, stylist profiles, and online appointment booking.",
-=======
                     videoSrc: "/assets/projectThumbnail/nazih saloon.png",
                     description: "Precision grooming salon website with services, gallery, and online appointment booking.",
->>>>>>> de4efa03546137cfaaa6e348c003b1f436073c47
                     projectLink: "#"
                 },
        
