@@ -39,38 +39,12 @@ export type LandingContents = Record<SupportedLanguages,{
         "projects": {
             heading: string,
             description: string,
-            projects: [
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                },
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                },
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                },
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                },
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                }
-            ],
+            projects: Array<{
+                caption: string,
+                videoSrc: string,
+                description: string,
+                projectLink: string
+            }>,
         },
         "services": {
             heading: string,
