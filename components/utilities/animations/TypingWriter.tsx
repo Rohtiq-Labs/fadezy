@@ -1,136 +1,106 @@
-import React,{FC, useCallback, useEffect, useState} from 'react'
+"use client";
 
-import { motion, steps } from "framer-motion"
-interface Props{
-    text: string | string[],
-    onAnimationEnd?: () => void,
-    typingSpeed?: number,
-    beforeNextLineDelay?: number,
-    startingDelay?: number,
-    infinite?: boolean,
-    defaultText?: string
+import React, { FC, useEffect, useRef, useState } from "react";
+import { motion, steps } from "framer-motion";
+
+interface Props {
+  text: string | string[];
+  onAnimationEnd?: () => void;
+  typingSpeed?: number;
+  beforeNextLineDelay?: number;
+  startingDelay?: number;
+  infinite?: boolean;
+  defaultText?: string;
 }
 
-const textAnimation = (
-    text: string,
-    typingSpeed: number,
-    delay: number,
-    setText: React.Dispatch<React.SetStateAction<string>>,
-    currentTextOutput: string
-) => {
-    const animationend = new Promise<void>((resolve) => {
-        const chars = text.split('');
-        
-        const currentChars: string[] = currentTextOutput.split('');//store   
-        let charsIndex = currentChars.length > 0 ? currentChars.length : 0;
-
-        const timer = setInterval(() => {
-    
-            if(charsIndex > chars.length){
-                setTimeout(() => {
-                
-                
-                    const deleteText = setInterval(() => {
-                    
-                        if(currentChars.length == 0){
-
-                            
-                
-                            resolve();
-                
-                            clearInterval(deleteText);
-                        }
-                        currentChars.pop();
-                        setText(currentChars.join(''));
-                    },typingSpeed / 2)
-
-                },delay);
-
-                clearInterval(timer);
-
-                
-                return
-            }//stop it when the animation is finished
-    
-            currentChars.push(chars[charsIndex]);
-            setText(currentChars.join(''));
-            charsIndex++;
-            
-        }, typingSpeed);//every 115ms push a word into currentChars then combine to string and output
-    })
-    return animationend
-    
-}
+const delay = (ms: number) =>
+  new Promise<void>((resolve) => setTimeout(resolve, ms));
 
 const TypingWriter: FC<Props> = ({
-    text:textProps,
-    onAnimationEnd = () => {},
-    typingSpeed = 115,
-    beforeNextLineDelay = 500,
-    startingDelay = 0,
-    infinite = true, 
-    defaultText = ""
+  text: textProps,
+  onAnimationEnd,
+  typingSpeed = 220,
+  beforeNextLineDelay = 800,
+  startingDelay = 0,
+  infinite = true,
+  defaultText = "",
 }) => {
+  const [display, setDisplay] = useState("");
+  const cancelledRef = useRef(false);
 
-    const [textOutput,setTextOutput] = useState(defaultText);
-    const [currentTextIndex,setCurrentTextIndex] = useState(0);
-    const [startDelay,setStartDelay] = useState(startingDelay);
+  useEffect(() => {
+    const lines = Array.isArray(textProps)
+      ? textProps.filter((line): line is string => typeof line === "string")
+      : [typeof textProps === "string" ? textProps : ""];
 
-    const runTextAnimation = useCallback(() => {
-        const currentText = Array.isArray(textProps) ? textProps[currentTextIndex] : textProps; 
-        setTimeout(() => {
-            
-            textAnimation(currentText,typingSpeed,beforeNextLineDelay,setTextOutput,textOutput).then(() => {
+    if (lines.length === 0) {
+      setDisplay(typeof defaultText === "string" ? defaultText : "");
+      return;
+    }
 
-                setStartDelay(0);
+    const firstLine = lines[0] ?? (typeof defaultText === "string" ? defaultText : "");
+    setDisplay(firstLine);
+    cancelledRef.current = false;
 
-                if(currentTextIndex < textProps.length - 1 && Array.isArray(textProps) ){    
-                    setCurrentTextIndex(currentTextIndex + 1);
-                }
+    const run = async () => {
+      await delay(startingDelay);
+      let index = 0;
 
-                if(currentTextIndex === textProps.length - 1){
-                    
-                    if(infinite){
-                        setCurrentTextIndex(0);
-                    }
-                    if(onAnimationEnd){
-                        onAnimationEnd();
-                    }
-                    
-                }
-            });
-        },startDelay)
-    },[currentTextIndex, textProps, typingSpeed, beforeNextLineDelay, startDelay, textOutput, onAnimationEnd, infinite]);
+      while (true) {
+        if (cancelledRef.current) return;
 
-    useEffect(() => {
-        runTextAnimation();
-    },[runTextAnimation]);
+        const toDelete = lines[index] ?? "";
+        for (let i = 0; i < toDelete.length; i++) {
+          if (cancelledRef.current) return;
+          setDisplay((prev) => prev.slice(0, -1));
+          await delay(typingSpeed);
+        }
 
+        await delay(beforeNextLineDelay);
+        if (cancelledRef.current) return;
 
+        index = (index + 1) % lines.length;
+        const toType = lines[index] ?? "";
 
+        for (let i = 0; i < toType.length; i++) {
+          if (cancelledRef.current) return;
+          setDisplay((prev) => prev + toType[i]);
+          await delay(typingSpeed);
+        }
 
-    return(
-        <motion.div 
-            className="inline-block" 
-            style={{borderRightStyle: "solid",borderRightWidth: "3px"}}
-            initial={{
-                borderRightColor: "rgba(255, 255, 255, 0.75)"
-            }}
-            animate={{
-                borderRightColor: "rgba(255, 255, 255, 0)"
-            }}
-            transition={{
-                ease: steps(40),
-                duration: 0.75,
-                repeat: Infinity
-            }}
-        >
-            {textOutput}
-        </motion.div>
-        
-    )
-}
+        await delay(beforeNextLineDelay);
+        if (!infinite && index === lines.length - 1) {
+          onAnimationEnd?.();
+          return;
+        }
+      }
+    };
 
+    run();
+    return () => {
+      cancelledRef.current = true;
+    };
+  }, [
+    Array.isArray(textProps) ? textProps.join("\n") : textProps,
+    typingSpeed,
+    beforeNextLineDelay,
+    startingDelay,
+    infinite,
+    defaultText,
+    onAnimationEnd,
+  ]);
 
+  return (
+    <motion.div
+      className="inline-block"
+      style={{ borderRightStyle: "solid", borderRightWidth: "3px" }}
+      initial={{ borderRightColor: "rgba(255, 255, 255, 0.75)" }}
+      animate={{ borderRightColor: "rgba(255, 255, 255, 0)" }}
+      transition={{ ease: steps(40), duration: 0.75, repeat: Infinity }}
+    >
+      {display}
+    </motion.div>
+  );
+};
 
-export default TypingWriter
+export default TypingWriter;

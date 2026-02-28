@@ -9,11 +9,10 @@ const InquiryForm: FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const subject = encodeURIComponent(`FADEZY inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    const text = encodeURIComponent(
+      `Hi FADEZY,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );
-    window.location.href = `mailto:hello@fadezy.com?subject=${subject}&body=${body}`;
+    window.location.href = `https://wa.me/923239675581?text=${text}`;
   };
 
   return (

@@ -117,7 +117,7 @@ export const landingContents: LandingContents = {
     "en": {
         hero: {
             headline: ["Modern","Digital Presence","For Your Salon"],
-            headlineTypingSpeed: 140,
+            headlineTypingSpeed: 220,
             description: "I’m We help salons and barbershops grow with modern websites, online bookings, and brand presence. Get your free demo today.",
             backgroundVideo: {
                 videoSrc: "/assets/background.mp4"
@@ -172,9 +172,9 @@ export const landingContents: LandingContents = {
                     projectLink: "#"
                 },
                 {
-                    caption: "LUXE HAIR STUDIO",
-                    videoSrc: "/assets/projectThumbnail/todo.jpg",
-                    description: "Here’Salon website with portfolio gallery, stylist profiles, and online appointment booking.",
+                    caption: "NAZIH GENTS SALON",
+                    videoSrc: "/assets/projectThumbnail/nazih saloon.png",
+                    description: "Precision grooming salon website with services, gallery, and online appointment booking.",
                     projectLink: "#"
                 },
        
@@ -206,12 +206,12 @@ export const landingContents: LandingContents = {
             heading: "Get in touch",
             contacts: [
                 {
-                    type: "email",
-                    contact: "hello@fadezy.com"
+                    type: "whatsapp",
+                    contact: "+92 323 9675581"
                 },
                 {
-                    type: "whatsapp",
-                    contact: "+1 234 567 8900"
+                    type: "instagram",
+                    contact: "instagram.com/fadezy.rl"
                 },
                 {
                     type: "demo",
@@ -384,12 +384,12 @@ export const landingContents: LandingContents = {
             heading: "تواصل معنا",
             contacts: [
                 {
-                    type: "email",
-                    contact: "hello@fadezy.com"
+                    type: "واتساب",
+                    contact: "+92 323 9675581"
                 },
                 {
-                    type: "whatsapp",
-                    contact: "+1 234 567 8900"
+                    type: "انستغرام",
+                    contact: "instagram.com/fadezy.rl"
                 },
                 {
                     type: "demo",
