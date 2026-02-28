@@ -8,7 +8,7 @@ import { FC } from "react";
 
 const DirectContactOptions: FC = () => {
   const lang = useCurrentLanguages();
-  const { heading, whatsappLabel, whatsappLink, emailLabel, emailAddress, instagramLabel, instagramLink } =
+  const { heading, whatsappLabel, whatsappLink, instagramLabel, instagramLink } =
     contactContents[lang].directContact;
 
   return (
@@ -34,13 +34,6 @@ const DirectContactOptions: FC = () => {
           >
             {whatsappLabel}
           </Link>
-          <a
-            href={`mailto:${emailAddress}`}
-            className="inline-flex items-center min-h-[44px] font-acumin-wide-light text-accent hover:opacity-90 transition-opacity w-fit"
-            aria-label={`${emailLabel}: ${emailAddress}`}
-          >
-            {emailAddress}
-          </a>
           <Link
             href={instagramLink}
             target="_blank"
