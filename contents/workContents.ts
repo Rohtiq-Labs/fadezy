@@ -60,39 +60,27 @@ export const workContents: WorkContents = {
       viewDemoLabel: "View Live Demo",
       projects: [
         {
-          salonName: "Luxe Hair Studio",
-          description: "Elegant salon website with online booking and portfolio gallery.",
-          mockupSrc: "/assets/projectThumbnail/hall.jpg",
-          demoLink: "#"
-        },
-        {
-          salonName: "Fade & Co Barbershop",
-          description: "Modern barbershop site with services and WhatsApp contact.",
-          mockupSrc: "/assets/projectThumbnail/moon.jpg",
+          salonName: "Classic Cuts Barbershop",
+          description: "A sleek barbershop site with online booking, service menu, and gallery.",
+          mockupSrc: "/assets/projectThumbnail/fade.png",
           demoLink: "#"
         },
         {
           salonName: "The Gentleman's Salon",
-          description: "Premium barbershop experience with appointment scheduling.",
-          mockupSrc: "/assets/projectThumbnail/old_portfolio.jpg",
+          description: "Premium salon website with brand storytelling, team section, and easy booking integration.",
+          mockupSrc: "/assets/projectThumbnail/hairmaster.jpg",
           demoLink: "#"
         },
         {
-          salonName: "Serenity Beauty Lounge",
-          description: "Luxury salon brand with stylist profiles and service menu.",
-          mockupSrc: "/assets/projectThumbnail/todo.jpg",
+          salonName: "Fade & Co Barbershop",
+          description: "Modern barbershop site with services, pricing, and WhatsApp contact. Mobile-first for clients on the go.",
+          mockupSrc: "/assets/projectThumbnail/trendz.jpeg",
           demoLink: "#"
         },
         {
-          salonName: "Urban Cuts",
-          description: "Contemporary barbershop with mobile-first booking.",
-          mockupSrc: "/assets/projectThumbnail/tools.jpg",
-          demoLink: "#"
-        },
-        {
-          salonName: "Nova Hair Atelier",
-          description: "High-end salon website with immersive visuals.",
-          mockupSrc: "/assets/projectThumbnail/hall.jpg",
+          salonName: "Nazih Gents Salon",
+          description: "Precision grooming salon website with services, gallery, and online appointment booking.",
+          mockupSrc: "/assets/projectThumbnail/nazih saloon.png",
           demoLink: "#"
         }
       ]
@@ -134,39 +122,27 @@ export const workContents: WorkContents = {
       viewDemoLabel: "عرض التجربة الحية",
       projects: [
         {
-          salonName: "Luxe Hair Studio",
-          description: "موقع صالون أنيق مع حجز أونلاين ومعرض أعمال.",
-          mockupSrc: "/assets/projectThumbnail/hall.jpg",
-          demoLink: "#"
-        },
-        {
-          salonName: "Fade & Co Barbershop",
-          description: "موقع حلاقة عصري مع خدمات واتساب للتواصل.",
-          mockupSrc: "/assets/projectThumbnail/moon.jpg",
+          salonName: "Classic Cuts Barbershop",
+          description: "موقع حلاقة أنيق مع حجز أونلاين وقائمة خدمات ومعرض.",
+          mockupSrc: "/assets/projectThumbnail/fade.png",
           demoLink: "#"
         },
         {
           salonName: "The Gentleman's Salon",
-          description: "تجربة حلاقة راقية مع جدولة المواعيد.",
-          mockupSrc: "/assets/projectThumbnail/old_portfolio.jpg",
+          description: "موقع صالون راقي مع سرد العلامة التجارية وقسم الفريق وحجز سهل.",
+          mockupSrc: "/assets/projectThumbnail/hairmaster.jpg",
           demoLink: "#"
         },
         {
-          salonName: "Serenity Beauty Lounge",
-          description: "علامة صالون فاخرة مع ملفات المصممين وقائمة الخدمات.",
-          mockupSrc: "/assets/projectThumbnail/todo.jpg",
+          salonName: "Fade & Co Barbershop",
+          description: "موقع حلاقة عصري مع خدمات وأسعار وواتساب. مناسب للجوال أولاً.",
+          mockupSrc: "/assets/projectThumbnail/trendz.jpeg",
           demoLink: "#"
         },
         {
-          salonName: "Urban Cuts",
-          description: "صالون حلاقة معاصر مع حجز mobile-first.",
-          mockupSrc: "/assets/projectThumbnail/tools.jpg",
-          demoLink: "#"
-        },
-        {
-          salonName: "Nova Hair Atelier",
-          description: "موقع صالون راقي مع صور غامرة.",
-          mockupSrc: "/assets/projectThumbnail/hall.jpg",
+          salonName: "Nazih Gents Salon",
+          description: "موقع صالون عناية بالرجال مع خدمات ومعرض وحجز مواعيد أونلاين.",
+          mockupSrc: "/assets/projectThumbnail/nazih saloon.png",
           demoLink: "#"
         }
       ]

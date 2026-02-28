@@ -15,13 +15,10 @@ const ContactForm: FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      `FADEZY - Free Preview Request from ${salonName}`
+    const text = encodeURIComponent(
+      `Hi FADEZY,\n\nSalon Name: ${salonName}\nOwner Name: ${ownerName}\nEmail: ${email}\nWhatsApp: ${whatsapp}\n\nMessage:\n${message}`
     );
-    const body = encodeURIComponent(
-      `Salon Name: ${salonName}\nOwner Name: ${ownerName}\nEmail: ${email}\nWhatsApp: ${whatsapp}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:hello@fadezy.com?subject=${subject}&body=${body}`;
+    window.location.href = `https://wa.me/923239675581?text=${text}`;
   };
 
   const inputClass =

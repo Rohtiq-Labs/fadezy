@@ -39,38 +39,12 @@ export type LandingContents = Record<SupportedLanguages,{
         "projects": {
             heading: string,
             description: string,
-            projects: [
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                },
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                },
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                },
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                },
-                {
-                    caption: string
-                    videoSrc: string,
-                    description: string,
-                    projectLink: string
-                }
-            ],
+            projects: Array<{
+                caption: string,
+                videoSrc: string,
+                description: string,
+                projectLink: string
+            }>,
         },
         "services": {
             heading: string,
@@ -143,7 +117,7 @@ export const landingContents: LandingContents = {
     "en": {
         hero: {
             headline: ["Modern","Digital Presence","For Your Salon"],
-            headlineTypingSpeed: 140,
+            headlineTypingSpeed: 220,
             description: "I’m We help salons and barbershops grow with modern websites, online bookings, and brand presence. Get your free demo today.",
             backgroundVideo: {
                 videoSrc: "/assets/background.mp4"
@@ -199,8 +173,13 @@ export const landingContents: LandingContents = {
                 },
                 {
                     caption: "NAZIH GENTS SALON",
+<<<<<<< HEAD
                     videoSrc: "/assets/projectThumbnail/nazih.png",
                     description: "Here’Salon website with portfolio gallery, stylist profiles, and online appointment booking.",
+=======
+                    videoSrc: "/assets/projectThumbnail/nazih saloon.png",
+                    description: "Precision grooming salon website with services, gallery, and online appointment booking.",
+>>>>>>> de4efa03546137cfaaa6e348c003b1f436073c47
                     projectLink: "#"
                 },
        
@@ -232,12 +211,12 @@ export const landingContents: LandingContents = {
             heading: "Get in touch",
             contacts: [
                 {
-                    type: "email",
-                    contact: "hello@fadezy.com"
+                    type: "whatsapp",
+                    contact: "+92 323 9675581"
                 },
                 {
-                    type: "whatsapp",
-                    contact: "+1 234 567 8900"
+                    type: "instagram",
+                    contact: "instagram.com/fadezy.rl"
                 },
                 {
                     type: "demo",
@@ -410,12 +389,12 @@ export const landingContents: LandingContents = {
             heading: "تواصل معنا",
             contacts: [
                 {
-                    type: "email",
-                    contact: "hello@fadezy.com"
+                    type: "واتساب",
+                    contact: "+92 323 9675581"
                 },
                 {
-                    type: "whatsapp",
-                    contact: "+1 234 567 8900"
+                    type: "انستغرام",
+                    contact: "instagram.com/fadezy.rl"
                 },
                 {
                     type: "demo",
