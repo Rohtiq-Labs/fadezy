@@ -34,7 +34,7 @@ const Landing: FC = ({}) => {
     // },{dependencies: [pageTransitionContext]});
 
     return (
-        <main className="flex flex-col w-full">
+        <main className="flex flex-col w-full max-w-[100vw] overflow-x-clip">
             <div className="bg-brand-bg">
                 <Hero />
             </div>

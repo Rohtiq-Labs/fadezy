@@ -27,11 +27,13 @@ export default async function RootLayout({
                     <FixedHeader />
                     <WhatsAppFloatingIcon />
                     {/* <SplashCursor /> */}
-                    <GsapPluginRegisterWrapper>
-                        <AnimatePresenceContextProvider pageTransitionType="none" mode="popLayout">
-                            {children}
-                        </AnimatePresenceContextProvider>
-                    </GsapPluginRegisterWrapper>
+                    <div className="max-w-[100vw] overflow-x-clip">
+                        <GsapPluginRegisterWrapper>
+                            <AnimatePresenceContextProvider pageTransitionType="none" mode="popLayout">
+                                {children}
+                            </AnimatePresenceContextProvider>
+                        </GsapPluginRegisterWrapper>
+                    </div>
                 </BlankLoadingContextProvider>
             </body>
         </html>

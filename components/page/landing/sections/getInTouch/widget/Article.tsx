@@ -26,7 +26,7 @@ const Article: FC = () => {
                             const isInstagram = type === "instagram" || type === "انستغرام";
                             const href = isWhatsapp ? WHATSAPP_URL : isInstagram ? INSTAGRAM_URL : undefined;
                             return (
-                                <span key={`${contact}-${i}`} className='text-nowrap'>
+                                <span key={`${contact}-${i}`} className='text-nowrap xs:whitespace-normal'>
                                     <span className='opacity-70'>{`${type}:`} </span>
                                     {href ? (
                                         <a

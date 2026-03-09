@@ -45,7 +45,7 @@ const ArticleContainer: FC<Props> = ({className,description,ref,style,title,titl
 
     return (
         <article 
-            className={cn('flex flex-col gap-[clamp(24px,calc(((100vw-1024px)/896*32)+24px),56px)] max-w-[clamp(520px,calc(((100vw-1024px)/896*255)+520px),775px)]',className)} 
+            className={cn('flex flex-col gap-[clamp(24px,calc(((100vw-1024px)/896*32)+24px),56px)] max-w-[clamp(520px,calc(((100vw-1024px)/896*255)+520px),775px)] lg:max-w-full', className)} 
             ref={triggerRef} 
             style={style} 
         >

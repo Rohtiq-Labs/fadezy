@@ -40,7 +40,12 @@ const ShareButtonsContainer: FC = () => {
                 className='
                     flex 
                     justify-between
+                    xs:flex-col
+                    xs:items-start
+                    xs:gap-4
                     w-full
+                    gap-10
+                    lg:gap-6
                 '
             >
                 <Link href={landingContents[lang]['lets-talk-button'].link}>
@@ -48,7 +53,7 @@ const ShareButtonsContainer: FC = () => {
                         {landingContents[lang]['lets-talk-button'].name}
                     </UnderlineButton>
                 </Link>
-                <div className='flex gap-10'>
+                <div className='flex gap-10 lg:gap-6 xs:gap-4 shrink-0'>
                     <Link href={landingContents[lang].hero.contact.facebook}>
                         <FacebookShareButton />
                     </Link>

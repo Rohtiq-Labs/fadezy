@@ -32,6 +32,8 @@ export type WorkContents = Record<
       afterLabel: string;
       beforeSrc: string;
       afterSrc: string;
+      beforeLink: string;
+      afterLink: string;
     };
     results: {
       heading: string;
@@ -91,8 +93,10 @@ export const workContents: WorkContents = {
         "See the transformation from outdated site to premium modern presence.",
       beforeLabel: "Before",
       afterLabel: "After",
-      beforeSrc: "/assets/pexels-cottonbro-8721339.jpg",
-      afterSrc: "/assets/pexels-cottonbro-8721318.jpg"
+      beforeSrc: "/assets/projectThumbnail/faderoom.png",
+      afterSrc: "/assets/projectThumbnail/arbarber.png",
+      beforeLink: "https://thfaderoom.netlify.app/",
+      afterLink: "https://arbarber.shop/"
     },
     results: {
       heading: "Results & Impact",
@@ -152,8 +156,10 @@ export const workContents: WorkContents = {
       description: "شاهد التحول من موقع قديم إلى حضور حديث وراقٍ.",
       beforeLabel: "قبل",
       afterLabel: "بعد",
-      beforeSrc: "/assets/pexels-cottonbro-8721339.jpg",
-      afterSrc: "/assets/pexels-cottonbro-8721318.jpg"
+      beforeSrc: "/assets/projectThumbnail/faderoom.png",
+      afterSrc: "/assets/projectThumbnail/arbarber.png",
+      beforeLink: "https://thfaderoom.netlify.app/",
+      afterLink: "https://arbarber.shop/"
     },
     results: {
       heading: "النتائج والتأثير",

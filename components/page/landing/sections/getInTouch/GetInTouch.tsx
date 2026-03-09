@@ -6,7 +6,7 @@ import InquiryForm from './widget/InquiryForm';
 
 const GetInTouch: FC = () => {
   return (
-    <SectionContainer id="get-in-touch" className="relative flex flex-col pb-12">
+    <SectionContainer id="get-in-touch" className="relative flex flex-col pb-12 min-h-0">
       <Article />
       <div className="w-full flex justify-center">
         <InquiryForm />

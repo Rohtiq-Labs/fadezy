@@ -11,7 +11,7 @@ const BackgroundVideo: FC = () => {
     const lang = useCurrentLanguages();
     const portraitScreen = useMediaQuery("(orientation: portrait)");
     return (
-        <div className="absolute inset-0 z-[0] portrait:relative portrait:w-full block overflow-clip">
+        <div className="absolute inset-0 z-[0] block overflow-clip">
             <CustomScrollAnimation
                 className='w-full h-full'
                 styleFrom={{

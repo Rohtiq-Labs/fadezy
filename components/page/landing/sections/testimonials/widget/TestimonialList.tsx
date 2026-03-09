@@ -125,7 +125,7 @@ const TestimonialList: FC = () => {
       </div>
 
       <div
-        className="grid grid-cols-3 lg:grid-cols-2 md:hidden gap-6 lg:gap-8 w-full mt-12 min-w-0 overflow-hidden"
+        className="grid grid-cols-3 lg:grid-cols-1 md:hidden gap-6 lg:gap-8 w-full mt-12 min-w-0 overflow-hidden"
         role="list"
         aria-label="Client testimonials"
       >

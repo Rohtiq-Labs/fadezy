@@ -19,9 +19,9 @@ const Headline: FC = () => {
 
     const containerRef = useRef<HTMLDivElement>(null);
     return (
-        <SpacingLgContainer className='h-full flex flex-col justify-center gap-[16px] portrait:justify-start' ref={containerRef}>
+        <SpacingLgContainer className='h-full flex flex-col justify-center gap-[16px] portrait:justify-start portrait:h-auto portrait:min-h-0 portrait:pt-14 overflow-visible' ref={containerRef}>
          
-            <HeadlineHero className='flex flex-col uppercase h-fit w-fit'>
+            <HeadlineHero className='flex flex-col uppercase h-fit max-w-full lg:w-fit'>
                 <span 
                     className='
                         grid 
@@ -61,7 +61,7 @@ const Headline: FC = () => {
                 </span>
 
                 <MaskAndMoveLandingAnimation  
-                    className=' font-semibold h-[1lh] w-fit'
+                    className='font-semibold min-h-[1lh] max-w-full lg:h-[1lh] lg:w-fit'
                     duration={0.75}
                     delay={0.7}
                 >
@@ -74,7 +74,7 @@ const Headline: FC = () => {
                 </MaskAndMoveLandingAnimation>
 
             </HeadlineHero>
-            <ParagraphTwiceXl className='opacity-80 w-[clamp(460px,calc(((100vw-1024px)/896*65)+460px),545px)] lg:w-[clamp(360px,calc(((100vw-480px)/544*80)+360px),420px)] xs:w-full'>
+            <ParagraphTwiceXl className='opacity-80 w-full max-w-full lg:max-w-[clamp(460px,calc(((100vw-1024px)/896*65)+460px),545px)]'>
              
                 <CustomLandingAnimation 
                     splitText={landingContents[lang].hero.description} 

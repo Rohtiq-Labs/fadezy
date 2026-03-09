@@ -24,7 +24,7 @@ const PricingCard: FC<{
     <article
       role="listitem"
       className={cn(
-        "relative flex flex-col min-h-[380px] p-6 lg:p-8 rounded-saas-lg border transition-all duration-300 min-w-0 w-full",
+        "relative flex flex-col min-h-[320px] lg:min-h-[380px] p-6 lg:p-8 rounded-saas-lg border transition-all duration-300 min-w-0 w-full",
         "bg-brand-bg shadow-card hover:shadow-card-hover",
         isHighlighted
           ? "border-primary ring-1 ring-primary"

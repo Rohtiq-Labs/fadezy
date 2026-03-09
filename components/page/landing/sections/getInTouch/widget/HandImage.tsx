@@ -22,10 +22,10 @@ const HandImage: FC= () => {
                 z-[-1]
 
                 sm:top-full
-           
                 sm:left-4
                 sm:w-full
-           
+                lg:w-full
+                lg:h-auto
                 lg:opacity-50
             '
         >

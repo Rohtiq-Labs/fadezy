@@ -12,16 +12,13 @@ const Hero: FC = () => {
                 min-h-[max(calc(var(--dvh)*100),640px)]
                 h-[calc(var(--dvh)*100)]
                 relative
-                portrait:h-fit
-                portrait:min-h-0
-                portrait:pt-[calc(var(--dvh)*20)]
-                portrait:flex
-                portrait:flex-col
-                portrait:gap-10
+                portrait:min-h-[100dvh]
+                portrait:h-[100dvh]
+                portrait:overflow-visible
             "
         >
             <BackgroundVideo />
-            <div className="absolute inset-0 z-[1] flex flex-col text-white [&_.bg-secondary]:bg-white">
+            <div className="absolute inset-0 z-[1] flex flex-col text-white overflow-visible [&_.bg-secondary]:bg-white">
                 <Headline />
                 <ShareButtonsContainer />
             </div>

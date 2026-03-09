@@ -17,6 +17,7 @@ const HeadlineHero: FC<Props> = ({children, ref, className, style}) => {
                 `
                     font-blinker
                     font-semibold
+                    headline-hero-responsive
                     [--headline-hero-font-size:clamp(64px,calc(((100vw-1024px)/896*16)+64px),80px)]
                     lg:[--headline-hero-font-size:clamp(48px,calc(((100vw-360px)/664*16)+48px),64px)]
                     text-[length:var(--headline-hero-font-size)] 

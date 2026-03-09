@@ -25,7 +25,7 @@ const SplitText: FC<Props> = ({text,splitTextMode = "words",style,className,ref}
                 splitWord.map((word, i) => {
 
                     return (
-                        <span className='' key={`words-${word}-${i}`}>
+                        <span className={cn(splitTextMode === "characters" && "inline-block whitespace-nowrap")} key={`words-${word}-${i}`}>
                             { characterRefs.current[i] = [] }
                             {
                                 splitTextMode === "characters" ? (

@@ -156,26 +156,26 @@ export const landingContents: LandingContents = {
                 {
                     caption: "THE FADE ROOM",
                     videoSrc: "/assets/projectThumbnail/fade.png",
-                    description: "Here’A sleek barbershop site with online booking, service menu, and gallery.",
-                    projectLink: "#"
+                    description: "Here's a sleek barbershop site with online booking, service menu, and gallery.",
+                    projectLink: "https://thfaderoom.netlify.app/"
                 },
                 {
                     caption: "HAIR MASTER",
                     videoSrc: "/assets/projectThumbnail/hairmaster.jpg",
-                    description: "Here’s a Premium salon website with brand storytelling, team section, and easy booking integration.’",
-                    projectLink: "#"
+                    description: "Here's a Premium salon website with brand storytelling, team section, and easy booking integration.",
+                    projectLink: "https://hairmaste.netlify.app/"
                 },
                 {
                     caption: "TRENDZ HAIR SALON",
                     videoSrc: "/assets/projectThumbnail/trendz.jpeg",
                     description: "Modern barbershop site with services, pricing, and WhatsApp contact. Mobile-first for clients on the go.",
-                    projectLink: "#"
+                    projectLink: "https://trendzhairsalon.netlify.app/"
                 },
                 {
                     caption: "NAZIH GENTS SALON",
                     videoSrc: "/assets/projectThumbnail/nazih saloon.png",
                     description: "Precision grooming salon website with services, gallery, and online appointment booking.",
-                    projectLink: "#"
+                    projectLink: "https://nazihsalon.netlify.app/"
                 },
        
             ],

@@ -59,6 +59,24 @@ body {
   }
 }
 
+/* Responsive hero/section headline font sizes (mobile fallback) */
+@media (max-width: 1024px) {
+  .headline-hero-responsive {
+    font-size: clamp(36px, calc(((100vw - 360px) / 664 * 16) + 48px), 64px);
+    line-height: 1.15;
+  }
+  .heading-eighth-xl-responsive {
+    font-size: clamp(48px, calc(((100vw - 360px) / 664 * 16) + 48px), 64px);
+    line-height: 1.2;
+  }
+}
+@media (max-width: 400px) {
+  .headline-hero-responsive {
+    font-size: clamp(32px, 10vw, 48px);
+    line-height: 1.15;
+  }
+}
+
 /* ========== EXAMPLE COMPONENT STYLES ========== */
 
 /* Primary button */

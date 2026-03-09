@@ -38,7 +38,7 @@ const WhyFadezy: FC = () => {
         styleFrom={{ opacity: 0, transform: "translateY(24px)" }}
         styleTo={{ opacity: 1, transform: "translateY(0)" }}
       >
-        <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full">
+        <div className="grid grid-cols-3 lg:grid-cols-1 gap-4 sm:gap-6 lg:gap-8 w-full">
           {items.map(({ title, description: desc }, i) => (
             <article
               key={`${title}-${i}`}
@@ -46,7 +46,7 @@ const WhyFadezy: FC = () => {
               aria-label={title}
             >
               <HeadingFourthXl className="text-accent font-acumin-semi-cond">{title}</HeadingFourthXl>
-              <ParagraphBaseRelax className="text-secondary/80 max-w-sm">
+              <ParagraphBaseRelax className="text-secondary/80 min-w-0 lg:max-w-sm">
                 {desc}
               </ParagraphBaseRelax>
             </article>

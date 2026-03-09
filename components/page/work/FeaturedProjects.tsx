@@ -8,12 +8,14 @@ import ProjectCard from "@/components/utilities/cards/ProjectCard";
 import HeadingSmDark from "@/components/utilities/headings/HeadingSmDark";
 import { useCurrentLanguages } from "@/contents/languageSupportHooks";
 import { workContents } from "@/contents/workContents";
+import { landingContents } from "@/contents/landingContents";
 import { cn } from "@/lib/tailwind/cn";
 import { FC } from "react";
 
 const FeaturedProjects: FC = () => {
   const lang = useCurrentLanguages();
-  const { heading, description, projects } = workContents[lang].featuredProjects;
+  const { heading, description } = workContents[lang].featuredProjects;
+  const projects = landingContents[lang].projects.projects;
 
   return (
     <SectionContainer
@@ -35,7 +37,7 @@ const FeaturedProjects: FC = () => {
       >
         {projects.map((project, i) => (
           <div
-            key={`${project.salonName}-${i}`}
+            key={`${project.caption}-${i}`}
             className={cn(
               "w-full max-w-[720px] flex flex-col gap-4 overflow-auto",
               {
@@ -51,7 +53,7 @@ const FeaturedProjects: FC = () => {
               }}
               trigger="self"
             >
-              <HeadingSmDark>{project.salonName}</HeadingSmDark>
+              <HeadingSmDark>{project.caption}</HeadingSmDark>
             </TextRevealScrollAnimation>
             <CustomScrollAnimation
               scrollTriggerVars={{
@@ -66,9 +68,9 @@ const FeaturedProjects: FC = () => {
               <ProjectCard
                 index={`0${i + 1}.`}
                 description={project.description}
-                mediaSrc={project.mockupSrc}
+                mediaSrc={project.videoSrc}
                 mediaType="image"
-                projectLink={project.demoLink}
+                projectLink={project.projectLink}
               />
             </CustomScrollAnimation>
           </div>
