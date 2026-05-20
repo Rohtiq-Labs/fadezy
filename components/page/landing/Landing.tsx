@@ -3,9 +3,9 @@
 import { FC } from 'react'
 import Hero from './sections/hero/Hero';
 import WhatIDo from './sections/whatIDo/WhatIDo';
+import TrustPositioning from './sections/trustPositioning/TrustPositioning';
 import Projects from './sections/projects/Projects';
 import Services from './sections/services/Services';
-import Pricing from './sections/pricing/Pricing';
 import Testimonials from './sections/testimonials/Testimonials';
 import GetInTouch from './sections/getInTouch/GetInTouch';
 import Footer from '@/components/footer/Footer';
@@ -42,13 +42,13 @@ const Landing: FC = ({}) => {
                 <WhatIDo />
             </div>
             <div className="bg-brand-bg">
-                <Projects />
+                <TrustPositioning />
             </div>
             <div className="bg-brand-bg-alt">
-                <Services />
+                <Projects />
             </div>
             <div className="bg-brand-bg">
-                <Pricing />
+                <Services />
             </div>
             <div className="bg-brand-bg-alt">
                 <Testimonials />

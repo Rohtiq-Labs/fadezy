@@ -19,7 +19,7 @@ const Headline: FC = () => {
 
     const containerRef = useRef<HTMLDivElement>(null);
     return (
-        <SpacingLgContainer className='h-full flex flex-col justify-center gap-[16px] portrait:justify-start portrait:h-auto portrait:min-h-0 portrait:pt-14 overflow-visible' ref={containerRef}>
+        <SpacingLgContainer className='h-full flex flex-col justify-center gap-[16px] portrait:h-auto portrait:min-h-0 overflow-visible' ref={containerRef}>
          
             <HeadlineHero className='flex flex-col uppercase h-fit max-w-full lg:w-fit'>
                 <span 

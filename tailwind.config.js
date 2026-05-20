@@ -13,8 +13,6 @@ module.exports = {
       md: { max: "768px" },
       sm: { max: "640px" },
       xs: { max: "480px" },
-      portrait: { raw: "(orientation: portrait)" },
-      landscape: { raw: "(orientation: landscape)" },
     },
     extend: {
       fontFamily: {

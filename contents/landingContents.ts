@@ -36,6 +36,10 @@ export type LandingContents = Record<SupportedLanguages,{
             heading: [string,string],
             imgSrcs: [string,string]
         },
+        "trust-positioning": {
+            ariaLabel: string,
+            statements: string[]
+        },
         "projects": {
             heading: string,
             description: string,
@@ -148,6 +152,15 @@ export const landingContents: LandingContents = {
         "full-screen-transition": {
             heading: ["Full screen","transition"],
             imgSrcs: ["/assets/pexels-cottonbro-8721339.jpg","/assets/pexels-cottonbro-8721318.jpg"]
+        },
+        "trust-positioning": {
+            ariaLabel: "Trust and positioning highlights",
+            statements: [
+                "Built for modern barbershops",
+                "Luxury-focused branding",
+                "Social-first strategy",
+                "Cinematic content systems"
+            ]
         },
         "projects": {
             heading: "Our work",
@@ -321,6 +334,15 @@ export const landingContents: LandingContents = {
         "full-screen-transition": {
             heading: ["انتقال","ملء الشاشة"],
             imgSrcs: ["/assets/pexels-cottonbro-8721339.jpg","/assets/pexels-cottonbro-8721318.jpg"]
+        },
+        "trust-positioning": {
+            ariaLabel: "أبرز نقاط الثقة والتموضع",
+            statements: [
+                "مصمم لصالونات الحلاقة الحديثة",
+                "هوية بصرية فاخرة",
+                "استراتيجية تركز على وسائل التواصل",
+                "أنظمة محتوى سينمائية"
+            ]
         },
         "projects": {
             heading: "أعمالنا",
