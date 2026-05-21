@@ -12,10 +12,10 @@ interface Props {
 }
 
 const cardLayouts = [
-  "col-span-7 min-h-[clamp(420px,52vh,560px)] lg:col-span-12 lg:min-h-[360px]",
-  "col-span-5 min-h-[clamp(280px,34vh,360px)] lg:col-span-6 sm:col-span-12",
-  "col-span-5 min-h-[clamp(280px,34vh,360px)] lg:col-span-6 sm:col-span-12",
-  "col-span-7 min-h-[clamp(360px,42vh,480px)] lg:col-span-12 lg:min-h-[320px]",
+  "col-span-1 min-h-[clamp(320px,48vh,400px)] desktop:col-span-7 desktop:min-h-[clamp(420px,52vh,560px)]",
+  "col-span-1 min-h-[clamp(280px,40vh,360px)] desktop:col-span-5 desktop:min-h-[clamp(280px,34vh,360px)]",
+  "col-span-1 min-h-[clamp(280px,40vh,360px)] desktop:col-span-5 desktop:min-h-[clamp(280px,34vh,360px)]",
+  "col-span-1 min-h-[clamp(300px,44vh,380px)] desktop:col-span-7 desktop:min-h-[clamp(360px,42vh,480px)]",
 ] as const;
 
 const ServiceCard: FC<{
@@ -48,17 +48,17 @@ const ServiceCard: FC<{
         aria-hidden
       />
 
-      <div className="absolute inset-0 z-[2] flex flex-col justify-end p-[clamp(24px,calc(((100vw-1024px)/896*20)+24px),40px)]">
+      <div className="absolute inset-0 z-[2] flex flex-col justify-end p-[clamp(16px,4vw,40px)]">
         <span
           className="font-blinker text-[11px] uppercase tracking-[0.22em] text-white/60 mb-3"
           aria-hidden
         >
           {String(index + 1).padStart(2, "0")}
         </span>
-        <h3 className="font-acumin-semi-cond text-[clamp(24px,calc(((100vw-1024px)/896*10)+24px),36px)] leading-[1.1] text-white uppercase tracking-[0.03em]">
+        <h3 className="font-acumin-semi-cond text-[clamp(20px,5vw,36px)] leading-[1.1] text-white uppercase tracking-[0.03em]">
           {title}
         </h3>
-        <p className="mt-3 font-acumin-wide-light text-[clamp(14px,calc(((100vw-1024px)/896*2)+14px),16px)] leading-[1.5] text-white/75 max-w-[420px]">
+        <p className="mt-3 font-acumin-wide-light text-[clamp(13px,3.2vw,16px)] leading-[1.5] text-white/75 max-w-[420px]">
           {tagline}
         </p>
         <span
@@ -85,7 +85,7 @@ const ServiceGrid: FC<Props> = ({ containerRef }) => {
       />
 
       <ul
-        className="grid grid-cols-12 gap-[clamp(12px,calc(((100vw-1024px)/896*8)+12px),20px)] lg:grid-cols-1 sm:gap-5 w-full"
+        className="grid grid-cols-1 gap-5 w-full desktop:grid-cols-12 desktop:gap-[clamp(12px,calc(((100vw-1024px)/896*8)+12px),20px)]"
         role="list"
         aria-label={heading}
       >

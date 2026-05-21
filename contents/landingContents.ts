@@ -160,7 +160,7 @@ export const landingContents: LandingContents = {
             before: {
                 label: "Before",
                 caption: "Generic barber branding",
-                imageSrc: "/assets/home%20page/barber%20saloon%20web.jpg"
+                imageSrc: "/assets/home%20page/before.jpeg"
             },
             after: {
                 label: "After",
@@ -351,7 +351,7 @@ export const landingContents: LandingContents = {
             before: {
                 label: "قبل",
                 caption: "علامة حلاقة تقليدية",
-                imageSrc: "/assets/home%20page/barber%20saloon%20web.jpg"
+                imageSrc: "/assets/home%20page/before.jpeg"
             },
             after: {
                 label: "بعد",

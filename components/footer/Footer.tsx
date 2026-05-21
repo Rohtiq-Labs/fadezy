@@ -62,11 +62,7 @@ const Footer: FC = () => {
               {sections.contact}
             </h3>
             <ul className="flex flex-col gap-3 text-sm font-acumin-wide-light text-footer-link">
-              <li>
-                <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className={linkBase}>
-                  {contact.phone}
-                </a>
-              </li>
+           
               <li>
                 <a
                   href={contact.whatsapp.url}

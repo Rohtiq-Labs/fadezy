@@ -3,6 +3,7 @@
 
 @custom-variant portrait (@media (orientation: portrait));
 @custom-variant landscape (@media (orientation: landscape));
+@custom-variant desktop (@media (min-width: 1025px));
 
 @import "./font.css";
 @import "./scollbar.css";
