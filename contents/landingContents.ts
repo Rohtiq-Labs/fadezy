@@ -206,14 +206,7 @@ export const landingContents: LandingContents = {
                     videoSrc: "/assets/projectThumbnail/trendz.jpeg",
                     description: "Modern grooming brand with confident digital identity.",
                     projectLink: "https://trendzhairsalon.netlify.app/"
-                },
-                {
-                    caption: "NAZIH GENTS SALON",
-                    videoSrc: "/assets/projectThumbnail/nazih saloon.png",
-                    description: "Premium gents salon with gallery-led visual hierarchy.",
-                    projectLink: "https://nazihsalon.netlify.app/"
-                },
-       
+                }
             ],
         },
         "get-in-touch": {
