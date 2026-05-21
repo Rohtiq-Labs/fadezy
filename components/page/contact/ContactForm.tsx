@@ -1,105 +1,120 @@
 "use client";
 
+import { contactContents, contactWhatsAppUrl } from "@/contents/contactContents";
 import { useCurrentLanguages } from "@/contents/languageSupportHooks";
-import { contactContents } from "@/contents/contactContents";
-import { FC, useState, FormEvent } from "react";
+import { cn } from "@/lib/tailwind/cn";
+import { FC, FormEvent, useState } from "react";
+
+const inputBase = cn(
+  "w-full bg-transparent border-0 border-b border-brand-border",
+  "py-4 font-acumin-wide-light text-[15px] text-brand-text",
+  "placeholder:text-brand-text-muted/60",
+  "transition-colors duration-500 ease-out",
+  "focus:outline-none focus:border-brand-text hover:border-brand-text/50"
+);
+
+const labelBase =
+  "font-blinker text-[10px] uppercase tracking-[0.2em] text-brand-text-muted mb-2 block";
 
 const ContactForm: FC = () => {
   const lang = useCurrentLanguages();
-  const formLabels = contactContents[lang].mainContact.form;
-  const [salonName, setSalonName] = useState("");
-  const [ownerName, setOwnerName] = useState("");
+  const form = contactContents[lang].form;
+  const [name, setName] = useState("");
+  const [shopName, setShopName] = useState("");
   const [email, setEmail] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [message, setMessage] = useState("");
+  const [instagram, setInstagram] = useState("");
+  const [inquiry, setInquiry] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const text = encodeURIComponent(
-      `Hi FADEZY,\n\nSalon Name: ${salonName}\nOwner Name: ${ownerName}\nEmail: ${email}\nWhatsApp: ${whatsapp}\n\nMessage:\n${message}`
+      `Fadezy Inquiry\n\nName: ${name}\nBarbershop: ${shopName}\nEmail: ${email}\nInstagram: ${instagram}\n\nLooking for:\n${inquiry}`
     );
-    window.location.href = `https://wa.me/923239675581?text=${text}`;
+    window.location.href = `${contactWhatsAppUrl}?text=${text}`;
   };
 
-  const inputClass =
-    "bg-white border border-brand-border rounded-sm px-4 py-3 min-h-[44px] text-primary-dark placeholder:text-secondary/60 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors w-full";
-  const labelClass = "font-acumin-wide-light text-sm text-secondary mb-2 block";
-
   return (
-    <div className="w-full max-w-2xl lg:max-w-md rounded-sm border border-brand-border bg-brand-bg-alt p-6 shadow-card">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-4 md:gap-5 w-full"
-        aria-label="Contact form"
-      >
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-[clamp(28px,calc(((100vw-1024px)/896*12)+28px),40px)] w-full max-w-[min(640px,100%)]"
+      aria-label={form.heading}
+    >
       <label className="flex flex-col">
-        <span className={labelClass}>{formLabels.salonNameLabel}</span>
+        <span className={labelBase}>{form.nameLabel}</span>
         <input
           type="text"
-          value={salonName}
-          onChange={(e) => setSalonName(e.target.value)}
-          className={inputClass}
-          placeholder={formLabels.salonNamePlaceholder}
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className={inputBase}
+          placeholder={form.namePlaceholder}
           required
-          aria-required
+          autoComplete="name"
         />
       </label>
       <label className="flex flex-col">
-        <span className={labelClass}>{formLabels.ownerNameLabel}</span>
+        <span className={labelBase}>{form.shopLabel}</span>
         <input
           type="text"
-          value={ownerName}
-          onChange={(e) => setOwnerName(e.target.value)}
-          className={inputClass}
-          placeholder={formLabels.ownerNamePlaceholder}
+          name="barbershop"
+          value={shopName}
+          onChange={(e) => setShopName(e.target.value)}
+          className={inputBase}
+          placeholder={form.shopPlaceholder}
           required
-          aria-required
         />
       </label>
       <label className="flex flex-col">
-        <span className={labelClass}>{formLabels.emailLabel}</span>
+        <span className={labelBase}>{form.emailLabel}</span>
         <input
           type="email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={inputClass}
-          placeholder={formLabels.emailPlaceholder}
+          className={inputBase}
+          placeholder={form.emailPlaceholder}
           required
-          aria-required
+          autoComplete="email"
         />
       </label>
       <label className="flex flex-col">
-        <span className={labelClass}>{formLabels.whatsappLabel}</span>
+        <span className={labelBase}>{form.instagramLabel}</span>
         <input
-          type="tel"
-          value={whatsapp}
-          onChange={(e) => setWhatsapp(e.target.value)}
-          className={inputClass}
-          placeholder={formLabels.whatsappPlaceholder}
-          aria-required={false}
+          type="text"
+          name="instagram"
+          value={instagram}
+          onChange={(e) => setInstagram(e.target.value)}
+          className={inputBase}
+          placeholder={form.instagramPlaceholder}
         />
       </label>
       <label className="flex flex-col">
-        <span className={labelClass}>{formLabels.messageLabel}</span>
+        <span className={labelBase}>{form.inquiryLabel}</span>
         <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          rows={4}
-          className={`${inputClass} resize-y min-h-[100px]`}
-          placeholder={formLabels.messagePlaceholder}
+          name="inquiry"
+          value={inquiry}
+          onChange={(e) => setInquiry(e.target.value)}
+          rows={3}
+          className={cn(inputBase, "resize-none min-h-[100px]")}
+          placeholder={form.inquiryPlaceholder}
           required
-          aria-required
         />
       </label>
       <button
         type="submit"
-        className="w-full sm:w-fit min-h-[44px] flex items-center justify-center font-acumin-wide-light font-semibold text-primary-dark px-8 py-3 rounded-sm bg-cta-gradient hover:opacity-95 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-brand-bg"
-        aria-label={formLabels.submitButton}
+        className={cn(
+          "self-start mt-4 min-h-[48px] px-8 py-3",
+          "font-acumin-wide-light text-[13px] uppercase tracking-[0.18em]",
+          "border border-brand-text/30 text-brand-text",
+          "transition-all duration-500 ease-out",
+          "hover:bg-brand-text hover:text-brand-bg",
+          "focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-text"
+        )}
+        aria-label={form.submitButton}
       >
-        {formLabels.submitButton}
+        {form.submitButton}
       </button>
     </form>
-    </div>
   );
 };
 

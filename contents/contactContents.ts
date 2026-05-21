@@ -1,39 +1,45 @@
 import { SupportedLanguages } from "./supportedLanguagesData";
 
+export type ContactDetailItem = {
+  label: string;
+  value: string;
+  href?: string;
+};
+
 export type ContactContents = Record<
   SupportedLanguages,
   {
     hero: {
+      eyebrow: string;
       headline: string;
       subheadline: string;
+      scrollCue: string;
+      visualSrc: string;
+      visualAlt: string;
     };
-    mainContact: {
-      intro: string;
-      form: {
-        salonNameLabel: string;
-        salonNamePlaceholder: string;
-        ownerNameLabel: string;
-        ownerNamePlaceholder: string;
-        emailLabel: string;
-        emailPlaceholder: string;
-        whatsappLabel: string;
-        whatsappPlaceholder: string;
-        messageLabel: string;
-        messagePlaceholder: string;
-        submitButton: string;
-      };
-    };
-    directContact: {
+    form: {
+      eyebrow: string;
       heading: string;
-      whatsappLabel: string;
-      whatsappLink: string;
+      intro: string;
+      nameLabel: string;
+      namePlaceholder: string;
+      shopLabel: string;
+      shopPlaceholder: string;
       emailLabel: string;
-      emailAddress: string;
+      emailPlaceholder: string;
       instagramLabel: string;
-      instagramLink: string;
+      instagramPlaceholder: string;
+      inquiryLabel: string;
+      inquiryPlaceholder: string;
+      submitButton: string;
     };
-    trustStatement: {
-      text: string;
+    details: {
+      eyebrow: string;
+      items: ContactDetailItem[];
+    };
+    statement: {
+      heading: string;
+      support: string;
     };
     cta: {
       headline: string;
@@ -44,89 +50,137 @@ export type ContactContents = Record<
   }
 >;
 
+const WHATSAPP_URL = "https://wa.me/923239675581";
+const INSTAGRAM_URL = "https://www.instagram.com/fadezy.rl/";
+
 export const contactContents: ContactContents = {
   en: {
     hero: {
-      headline: "Get in Touch",
+      eyebrow: "Fadezy Studio",
+      headline: "Let's Build Your Brand Into a Premium Experience",
       subheadline:
-        "Let's create a digital presence that matches your salon's standard."
+        "Fadezy partners with premium barbershops to create cinematic digital presence, modern branding, and luxury online experiences.",
+      scrollCue: "Scroll to inquire",
+      visualSrc: "/assets/background.mp4",
+      visualAlt:
+        "Cinematic luxury barbershop atmosphere — Fadezy contact page hero",
     },
-    mainContact: {
+    form: {
+      eyebrow: "Inquiry",
+      heading: "Start Your Transformation",
       intro:
-        "Tell us about your salon and we'll prepare a custom preview for you.",
-      form: {
-        salonNameLabel: "Salon Name",
-        salonNamePlaceholder: "Your salon name",
-        ownerNameLabel: "Owner Name",
-        ownerNamePlaceholder: "Your name",
-        emailLabel: "Email",
-        emailPlaceholder: "your@email.com",
-        whatsappLabel: "WhatsApp Number",
-        whatsappPlaceholder: "+92 323 9675581",
-        messageLabel: "Message",
-        messagePlaceholder: "Tell us about your salon and what you're looking for...",
-        submitButton: "Request Free Preview"
-      }
-    },
-    directContact: {
-      heading: "Or reach us directly",
-      whatsappLabel: "WhatsApp",
-      whatsappLink: "https://wa.me/923239675581",
+        "Share a few details. We respond personally — no automated sales funnel.",
+      nameLabel: "Name",
+      namePlaceholder: "Your name",
+      shopLabel: "Barbershop Name",
+      shopPlaceholder: "Your shop or brand",
       emailLabel: "Email",
-      emailAddress: "",
+      emailPlaceholder: "you@yourshop.com",
       instagramLabel: "Instagram",
-      instagramLink: "https://www.instagram.com/fadezy.rl/"
+      instagramPlaceholder: "@yourshop",
+      inquiryLabel: "What are you looking for?",
+      inquiryPlaceholder:
+        "Website, branding, content, or full digital identity...",
+      submitButton: "Send Inquiry",
     },
-    trustStatement: {
-      text: "We respond within 24 hours. No obligation. No upfront commitment."
+    details: {
+      eyebrow: "Direct",
+      items: [
+        {
+          label: "Email",
+          value: "hello@fadezy.com",
+          href: "mailto:hello@fadezy.com",
+        },
+        {
+          label: "Instagram",
+          value: "@fadezy.rl",
+          href: INSTAGRAM_URL,
+        },
+        {
+          label: "Location",
+          value: "Remote — Worldwide",
+        },
+        {
+          label: "Response",
+          value: "Within 24 hours",
+        },
+      ],
+    },
+    statement: {
+      heading: "Premium clients judge your brand before they ever book.",
+      support:
+        "Luxury barbershops deserve luxury digital presence. Fadezy exists to close that gap.",
     },
     cta: {
-      headline: "See Your Salon Website Before You Pay.",
-      subtext: "Request your free preview and we'll show you what we can do.",
-      buttonText: "Start Now",
-      link: "/contact"
-    }
+      headline: "Let's Create Something Premium",
+      subtext:
+        "Fadezy helps modern barbershops elevate their online image through cinematic branding and luxury-focused digital experiences.",
+      buttonText: "Start Your Inquiry",
+      link: "#contact-inquire",
+    },
   },
   ar: {
     hero: {
-      headline: "تواصل معنا",
+      eyebrow: "استوديو Fadezy",
+      headline: "لنبني علامتك كتجربة راقية",
       subheadline:
-        "لنخلق حضوراً رقمياً يليق بمستوى صالونك."
+        "يشارك Fadezy صالونات الحلاقة الراقية لصنع حضور رقمي سينمائي وهوية عصرية وتجارب أونلاين فاخرة.",
+      scrollCue: "مرّر للاستفسار",
+      visualSrc: "/assets/background.mp4",
+      visualAlt: "أجواء صالون حلاقة فاخر سينمائي — صفحة تواصل Fadezy",
     },
-    mainContact: {
-      intro:
-        "أخبرنا عن صالونك ونعد لك معاينة مخصصة.",
-      form: {
-        salonNameLabel: "اسم الصالون",
-        salonNamePlaceholder: "اسم صالونك",
-        ownerNameLabel: "اسم المالك",
-        ownerNamePlaceholder: "اسمك",
-        emailLabel: "البريد الإلكتروني",
-        emailPlaceholder: "your@email.com",
-        whatsappLabel: "رقم واتساب",
-        whatsappPlaceholder: "+92 323 9675581",
-        messageLabel: "الرسالة",
-        messagePlaceholder: "أخبرنا عن صالونك وما تبحث عنه...",
-        submitButton: "اطلب معاينة مجانية"
-      }
-    },
-    directContact: {
-      heading: "أو تواصل معنا مباشرة",
-      whatsappLabel: "واتساب",
-      whatsappLink: "https://wa.me/923239675581",
-      emailLabel: "البريد",
-      emailAddress: "",
+    form: {
+      eyebrow: "استفسار",
+      heading: "ابدأ تحولك",
+      intro: "شاركنا التفاصيل. نرد شخصياً — بدون مسار مبيعات آلي.",
+      nameLabel: "الاسم",
+      namePlaceholder: "اسمك",
+      shopLabel: "اسم الصالون",
+      shopPlaceholder: "محلك أو علامتك",
+      emailLabel: "البريد الإلكتروني",
+      emailPlaceholder: "you@yourshop.com",
       instagramLabel: "إنستغرام",
-      instagramLink: "https://www.instagram.com/fadezy.rl/"
+      instagramPlaceholder: "@yourshop",
+      inquiryLabel: "ماذا تبحث عنه؟",
+      inquiryPlaceholder: "موقع، هوية، محتوى، أو حضور رقمي كامل...",
+      submitButton: "إرسال الاستفسار",
     },
-    trustStatement: {
-      text: "نرد خلال 24 ساعة. بدون التزام. بدون دفعة مقدمة."
+    details: {
+      eyebrow: "مباشر",
+      items: [
+        {
+          label: "البريد",
+          value: "hello@fadezy.com",
+          href: "mailto:hello@fadezy.com",
+        },
+        {
+          label: "إنستغرام",
+          value: "@fadezy.rl",
+          href: INSTAGRAM_URL,
+        },
+        {
+          label: "الموقع",
+          value: "عن بُعد — عالمياً",
+        },
+        {
+          label: "الرد",
+          value: "خلال 24 ساعة",
+        },
+      ],
+    },
+    statement: {
+      heading: "العملاء الراقيون يحكمون على علامتك قبل الحجز.",
+      support:
+        "صالونات الحلاقة الفاخرة تستحق حضوراً رقمياً فاخراً. Fadezy موجود لسد هذه الفجوة.",
     },
     cta: {
-      headline: "شاهد موقع صالونك قبل أن تدفع.",
-      subtext: "اطلب معاينتك المجانية ونوضح لك ما نستطيع تقديمه.",
-      buttonText: "ابدأ الآن",
-      link: "/contact"
-    }
-  }
+      headline: "لنصنع شيئاً راقياً",
+      subtext:
+        "يساعد Fadezy صالونات الحلاقة العصرية على رفع صورتها أونلاين عبر هوية سينمائية وتجارب رقمية فاخرة.",
+      buttonText: "ابدأ استفسارك",
+      link: "#contact-inquire",
+    },
+  },
 } as const;
+
+export const contactWhatsAppUrl = WHATSAPP_URL;

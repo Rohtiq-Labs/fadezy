@@ -8,32 +8,34 @@
 @import "./scollbar.css";
 
 :root {
-  /* Base: dark #0a0a0a, light #f0efeb. Highlight: #1290a9 + similar shades for contrast. */
+  /* Luxury barber palette — warm beige, charcoal, matte gray, soft cream */
   --color-primary: #1290a9;
   --color-primary-hover: #0e7a8f;
-  --color-primary-light: #e6f6f9;
+  --color-primary-light: #e8ebe6;
 
   --color-accent: #1290a9;
-  /* Neutrals */
 
   --color-bg: #f0efeb;
-  --color-bg-alt: #F4F4F2;
+  --color-bg-alt: #e8e6e1;
+  --color-bg-dark: #0a0a0a;
   --color-text: #0a0a0a;
-  --color-text-muted: #666666;
-  --color-border: #EAEAF0;
+  --color-text-muted: #5c5c5c;
+  --color-border: #d4d2cc;
 
   --color-footer-bg: #0a0a0a;
-  --color-footer-text: #FFFFFF;
-  --color-footer-link: #1290a9;
+  --color-footer-text: #f0efeb;
+  --color-footer-link: #b8b5ae;
 
   --color-cta-gradient: linear-gradient(to right, #1290a9, #0e7a8f);
 
-  /* Design tokens */
-  --radius: 12px;
-  --radius-sm: 10px;
-  --radius-lg: 14px;
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04);
-  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --section-spacing: clamp(96px, 12vw, 160px);
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --radius: 0;
+  --radius-sm: 0;
+  --radius-lg: 0;
+  --shadow-card: none;
+  --shadow-card-hover: none;
   --dvh: 1vh;
 }
 
@@ -215,4 +217,124 @@ body {
 
 .hero-saas .hero-subtitle {
   color: var(--color-text-muted);
+}
+
+/* Luxury editorial utilities */
+.luxury-section-intro {
+  max-width: clamp(520px, 42vw, 720px);
+}
+
+.luxury-fade-in {
+  animation: luxuryFadeIn 1.2s var(--ease-luxury) forwards;
+}
+
+@keyframes luxuryFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.luxury-hover-lift {
+  transition: transform 0.6s var(--ease-luxury), opacity 0.6s var(--ease-luxury);
+}
+
+.luxury-hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Client brand marquee — typographic wordmarks (solid black) */
+.brand-wordmark {
+  color: #0a0a0a;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.brand-wordmark--sans-bold {
+  font-family: blinker, sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, calc(((100vw - 1024px) / 896 * 8) + 22px), 30px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand-wordmark--serif {
+  font-family: acumin-semi-cond, serif;
+  font-weight: 400;
+  font-size: clamp(24px, calc(((100vw - 1024px) / 896 * 10) + 24px), 34px);
+  letter-spacing: 0.02em;
+}
+
+.brand-wordmark--sans-wide {
+  font-family: blinker, sans-serif;
+  font-weight: 300;
+  font-size: clamp(20px, calc(((100vw - 1024px) / 896 * 6) + 20px), 28px);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.brand-wordmark--serif-display {
+  font-family: acumin-semi-cond, serif;
+  font-weight: 400;
+  font-size: clamp(26px, calc(((100vw - 1024px) / 896 * 12) + 26px), 36px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.brand-wordmark--geometric {
+  font-family: blinker, sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, calc(((100vw - 1024px) / 896 * 14) + 28px), 40px);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.brand-wordmark--serif-luxury {
+  font-family: shanoy, serif;
+  font-weight: 400;
+  font-size: clamp(26px, calc(((100vw - 1024px) / 896 * 10) + 26px), 34px);
+  letter-spacing: 0.03em;
+}
+
+.brand-wordmark-tagline {
+  color: #0a0a0a;
+  font-family: acumin-wide-light, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  opacity: 0.85;
+}
+
+.brand-marquee-track {
+  animation: brandMarquee 18s linear infinite;
+  will-change: transform;
+}
+
+.brand-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes brandMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
 }

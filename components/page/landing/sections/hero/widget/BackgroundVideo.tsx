@@ -20,8 +20,7 @@ const BackgroundVideo: FC = () => {
 
                 }}
                 styleTo={{
-                    
-                    transform:   portraitScreen ? "" : "scale(1.1) translateY(33%)"
+                    transform: portraitScreen ? "" : "scale(1.05) translateY(12%)"
                 }}
                 ease={"none"}
                 trigger={"self"}
@@ -36,8 +35,8 @@ const BackgroundVideo: FC = () => {
             >
                 <ZoomAndFadeLandingAnimation 
                     className='w-full h-full'
-                    duration={1}
-                    delay={0.7}
+                    duration={1.4}
+                    delay={0.3}
                 >
                 
                         <video 

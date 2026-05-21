@@ -11,27 +11,7 @@ import Logo from "@/components/header/widget/Logo";
 import { cn } from "@/lib/tailwind/cn";
 
 const linkBase =
-  "text-footer-link hover:text-primary-hover focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-footer-bg rounded transition-colors duration-200";
-
-const InstagramIcon: FC<{ className?: string }> = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-  </svg>
-);
+  "text-footer-link hover:text-footer-text focus:text-footer-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-footer-bg transition-colors duration-500";
 
 const Footer: FC = () => {
   const lang = useCurrentLanguages();
@@ -42,37 +22,34 @@ const Footer: FC = () => {
     <footer
       role="contentinfo"
       aria-label="Site footer"
-      className="bg-footer-bg text-footer-text border-t border-white/10 pt-6 lg:pt-8"
+      className="bg-footer-bg text-footer-text border-t border-white/10"
     >
-      <SpacingLgContainer className="pt-6 pb-10 lg:pt-8 lg:pb-12">
-        <div className="grid grid-cols-4 lg:grid-cols-2 md:grid-cols-1 gap-6 lg:gap-8">
-          <div className="lg:col-span-1 flex flex-col gap-4 max-w-sm">
+      <SpacingLgContainer className="pt-[clamp(48px,8vw,80px)] pb-[clamp(40px,6vw,64px)]">
+        <div className="grid grid-cols-12 lg:grid-cols-1 gap-12 lg:gap-10">
+          <div className="col-span-5 lg:col-span-1 flex flex-col gap-6 max-w-md">
             <Link
               href="/"
               aria-label="FADEZY home"
-              className={cn(linkBase, "w-fit text-footer-text hover:text-footer-link")}
+              className={cn(linkBase, "w-fit text-footer-text")}
             >
               <Logo className="text-inherit" />
             </Link>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="font-acumin-wide-light text-sm leading-[1.7] text-footer-link tracking-[0.02em]">
               {tagline}
             </p>
           </div>
 
           <nav
             aria-label="Quick links"
-            className="flex flex-col gap-4"
+            className="col-span-3 lg:col-span-1 flex flex-col gap-5"
           >
-            <h3 className="text-white/90 text-xs font-medium tracking-wider uppercase">
+            <h3 className="font-blinker text-[10px] uppercase tracking-[0.22em] text-footer-text/80">
               {sections.quickLinks}
             </h3>
             <ul className="flex flex-col gap-3">
               {routes.map(({ key, path }) => (
                 <li key={path}>
-                  <Link
-                    href={path}
-                    className={cn(linkBase, "text-sm")}
-                  >
+                  <Link href={path} className={cn(linkBase, "text-sm font-acumin-wide-light")}>
                     {labels[key]}
                   </Link>
                 </li>
@@ -80,16 +57,13 @@ const Footer: FC = () => {
             </ul>
           </nav>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-white/90 text-xs font-medium tracking-wider uppercase">
+          <div className="col-span-4 lg:col-span-1 flex flex-col gap-5">
+            <h3 className="font-blinker text-[10px] uppercase tracking-[0.22em] text-footer-text/80">
               {sections.contact}
             </h3>
-            <ul className="flex flex-col gap-3 text-sm text-white/70">
+            <ul className="flex flex-col gap-3 text-sm font-acumin-wide-light text-footer-link">
               <li>
-                <a
-                  href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                  className={linkBase}
-                >
+                <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className={linkBase}>
                   {contact.phone}
                 </a>
               </li>
@@ -103,64 +77,34 @@ const Footer: FC = () => {
                   {contact.whatsapp.label}
                 </a>
               </li>
+              <li>
+                <a
+                  href={social.instagram.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkBase}
+                >
+                  {social.instagram.label}
+                </a>
+              </li>
             </ul>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <h3 className="text-white/90 text-xs font-medium tracking-wider uppercase">
-              {sections.followUs}
-            </h3>
-            <div className="flex gap-4">
-              <a
-                href={social.instagram.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.instagram.label}
-                className={cn(
-                  linkBase,
-                  "p-2 -m-2 text-white/70 hover:text-footer-link"
-                )}
-              >
-                <InstagramIcon />
-              </a>
-            </div>
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col items-center justify-center text-center gap-3">
-          <span className="text-white/50 text-sm">
+        <div className="mt-[clamp(48px,6vw,72px)] pt-8 border-t border-white/10 flex flex-col sm:items-start items-center text-left gap-3">
+          <span className="font-acumin-wide-light text-xs text-footer-link tracking-[0.04em]">
             {legal.copyrightPrefix}
             <a
               href={legal.rohtiqLabsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/50 underline"
+              className="underline hover:text-footer-text transition-colors duration-500"
               aria-label="Rohtiq Labs"
             >
               {legal.rohtiqLabsLabel}
             </a>
             {legal.copyrightSuffix}
           </span>
-          {(legal.privacy || legal.terms) && (
-            <div className="flex flex-row flex-wrap items-center justify-center gap-4">
-              {legal.privacy && (
-                <Link
-                  href="/privacy"
-                  className={cn(linkBase, "text-sm text-white/50")}
-                >
-                  {legal.privacy}
-                </Link>
-              )}
-              {legal.terms && (
-                <Link
-                  href="/terms"
-                  className={cn(linkBase, "text-sm text-white/50")}
-                >
-                  {legal.terms}
-                </Link>
-              )}
-            </div>
-          )}
         </div>
       </SpacingLgContainer>
     </footer>

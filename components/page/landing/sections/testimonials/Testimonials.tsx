@@ -5,7 +5,7 @@ import TestimonialList from "./widget/TestimonialList";
 
 const Testimonials: FC = () => {
   return (
-    <SectionContainer className="flex flex-col gap-8 min-w-0 overflow-x-hidden">
+    <SectionContainer className="flex flex-col min-w-0 overflow-x-hidden !mt-[var(--section-spacing)] pb-[clamp(64px,10vw,120px)]">
       <Article />
       <TestimonialList />
     </SectionContainer>

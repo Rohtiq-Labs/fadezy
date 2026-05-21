@@ -1,108 +1,57 @@
-"use client"
+"use client";
 
-import CustomLandingAnimation from '@/components/utilities/animations/landing/CustomLandingAnimation';
-import MaskAndMoveLandingAnimation from '@/components/utilities/animations/landing/MaskAndMoveLandingAnimation';
-import ScaleLandingAnimation from '@/components/utilities/animations/landing/ScaleLandingAnimation';
-import TypingWriter from '@/components/utilities/animations/TypingWriter';
-import SpacingLgContainer from '@/components/utilities/containers/SpacingLgContainer';
-import Line from '@/components/utilities/decorations/Line';
-import HeadlineHero from '@/components/utilities/headings/HeadlineHero';
-import ParagraphTwiceXl from '@/components/utilities/paragraphs/ParagraphTwiceXl';
-import { landingContents } from '@/contents/landingContents';
-import { useCurrentLanguages } from '@/contents/languageSupportHooks';
-
-
-import { FC, useRef } from 'react'
+import CustomLandingAnimation from "@/components/utilities/animations/landing/CustomLandingAnimation";
+import MaskAndMoveLandingAnimation from "@/components/utilities/animations/landing/MaskAndMoveLandingAnimation";
+import LuxuryCtaButton from "@/components/utilities/buttons/LuxuryCtaButton";
+import SpacingLgContainer from "@/components/utilities/containers/SpacingLgContainer";
+import HeadlineHero from "@/components/utilities/headings/HeadlineHero";
+import { landingContents } from "@/contents/landingContents";
+import { useCurrentLanguages } from "@/contents/languageSupportHooks";
+import { FC } from "react";
 
 const Headline: FC = () => {
-    const lang = useCurrentLanguages();
+  const lang = useCurrentLanguages();
+  const { headline, description, ctaText } = landingContents[lang].hero;
 
-    const containerRef = useRef<HTMLDivElement>(null);
-    return (
-        <SpacingLgContainer className='h-full flex flex-col justify-center gap-[16px] portrait:h-auto portrait:min-h-0 overflow-visible' ref={containerRef}>
-         
-            <HeadlineHero className='flex flex-col uppercase h-fit max-w-full lg:w-fit'>
-                <span 
-                    className='
-                        grid 
-                        font-light 
-                        grid-cols-[auto_1fr] 
-                        items-center 
-                        gap-[24px]  
-                        w-[8ch] 
-                        sm:w-[9ch]
-                    '
-                >
-                    <MaskAndMoveLandingAnimation 
-                        duration={0.75}
-                        delay={0.7}
-                    >
-                        {landingContents[lang].hero.headline[0]}
-                    </MaskAndMoveLandingAnimation>
-                    
-                    <ScaleLandingAnimation 
-                        className='w-full origin-[center_left]'
-                        scaleFactor={{
-                            from: {
-                                x: 1,
-                                y: 0
-                            },
-                            to: {
-                                x: 1,
-                                y: 1
-                            }
-                        }}
-                      
-                        duration={0.75}
-                    >
-                        <Line />
-                    </ScaleLandingAnimation>
-                    
-                </span>
+  return (
+    <SpacingLgContainer className="h-full flex flex-col justify-center items-start gap-8 portrait:h-auto portrait:min-h-0 overflow-visible luxury-fade-in">
+      <HeadlineHero className="flex flex-col uppercase h-fit max-w-full tracking-[0.02em]">
+        <MaskAndMoveLandingAnimation duration={1} delay={0.4}>
+          <span className="font-light block">{headline[0]}</span>
+        </MaskAndMoveLandingAnimation>
+        <MaskAndMoveLandingAnimation duration={1} delay={0.55}>
+          <span className="font-semibold block">{headline[1]}</span>
+        </MaskAndMoveLandingAnimation>
+        <MaskAndMoveLandingAnimation duration={1} delay={0.7}>
+          <span className="font-light block opacity-90">{headline[2]}</span>
+        </MaskAndMoveLandingAnimation>
+      </HeadlineHero>
 
-                <MaskAndMoveLandingAnimation  
-                    className='font-semibold min-h-[1lh] max-w-full lg:h-[1lh] lg:w-fit'
-                    duration={0.75}
-                    delay={0.7}
-                >
-                    <TypingWriter 
-                        typingSpeed={landingContents[lang].hero.headlineTypingSpeed} 
-                        text={[landingContents[lang].hero.headline[1],landingContents[lang].hero.headline[2]]} 
-                        startingDelay={2000} 
-                        defaultText={landingContents[lang].hero.headline[1]}
-                    />
-                </MaskAndMoveLandingAnimation>
+      <CustomLandingAnimation
+        splitText={description}
+        splitTextMode="words"
+        stagger={0.04}
+        styleFrom={{ opacity: 0, transform: "translateY(8px)" }}
+        styleTo={{ opacity: 1, transform: "translateY(0)" }}
+        duration={1}
+        delay={0.9}
+      >
+        <p className="font-acumin-wide-light text-[clamp(15px,calc(((100vw-1024px)/896*4)+15px),18px)] leading-[1.6] tracking-[0.02em] text-white/75 max-w-[min(420px,90vw)]">
+          {description}
+        </p>
+      </CustomLandingAnimation>
 
-            </HeadlineHero>
-            <ParagraphTwiceXl className='opacity-80 w-full max-w-full lg:max-w-[clamp(460px,calc(((100vw-1024px)/896*65)+460px),545px)]'>
-             
-                <CustomLandingAnimation 
-                    splitText={landingContents[lang].hero.description} 
-                    splitTextMode='words' 
-               
-                    stagger={0.025}
-                    styleFrom={{
-                        transform: "translateY(100%)",
-                        clipPath: "inset(0% 0% 101% 0%)",
-                        opacity: 0,
-
-                     
-                    }}
-                    styleTo={{
-                        clipPath: "inset(0% 0% -1% 0%)",
-                        transform: "translateY(0%)",
-                        opacity: 1,
-    
-                       
-                    }}
-                    duration={0.75}
-                    delay={0.7}
-                >
-                    {landingContents[lang].hero.description}
-                </CustomLandingAnimation>
-            </ParagraphTwiceXl>
-        </SpacingLgContainer>
-    );
+      <MaskAndMoveLandingAnimation duration={0.9} delay={1.1}>
+        <LuxuryCtaButton
+          href={landingContents[lang]["lets-talk-button"].link}
+          variant="light"
+          ariaLabel={ctaText}
+        >
+          {ctaText}
+        </LuxuryCtaButton>
+      </MaskAndMoveLandingAnimation>
+    </SpacingLgContainer>
+  );
 };
 
 export default Headline;

@@ -35,7 +35,7 @@ const PHONE = "+92 323 9675581";
 
 export const footerContents: FooterContents = {
   en: {
-    tagline: "We help salons elevate their brand and attract more clients online.",
+    tagline: "A luxury creative studio for elite barbershops — cinematic brands, refined digital presence.",
     sections: {
       quickLinks: "Quick Links",
       contact: "Contact",
@@ -67,7 +67,7 @@ export const footerContents: FooterContents = {
     }
   },
   ar: {
-    tagline: "نساعد الصالونات في تعزيز علامتها التجارية وجذب المزيد من العملاء أونلاين.",
+    tagline: "استوديو إبداعي فاخر لصالونات الحلاقة الراقية — علامات سينمائية وحضور رقمي مكرّس.",
     sections: {
       quickLinks: "روابط سريعة",
       contact: "تواصل",

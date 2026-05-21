@@ -1,10 +1,11 @@
 "use client";
 
 import AboutHero from "./AboutHero";
-import OurMission from "./OurMission";
-import WhySalons from "./WhySalons";
-import RohtiqLabs from "./RohtiqLabs";
-import OurApproach from "./OurApproach";
+import AboutPhilosophy from "./AboutPhilosophy";
+import AboutWhoWeAre from "./AboutWhoWeAre";
+import AboutApproach from "./AboutApproach";
+import AboutShowcase from "./AboutShowcase";
+import AboutWhyFadezy from "./AboutWhyFadezy";
 import AboutCta from "./AboutCta";
 import Footer from "@/components/footer/Footer";
 import { FC } from "react";
@@ -13,14 +14,15 @@ const AboutPage: FC = () => {
   return (
     <main
       role="main"
-      aria-label="About FADEZY"
-      className="flex flex-col w-full min-h-0"
+      aria-label="About Fadezy — luxury barber branding and digital studio"
+      className="flex flex-col w-full max-w-[100vw] overflow-x-clip bg-brand-bg"
     >
       <AboutHero />
-      <OurMission />
-      <WhySalons />
-      <RohtiqLabs />
-      <OurApproach />
+      <AboutPhilosophy />
+      <AboutWhoWeAre />
+      <AboutApproach />
+      <AboutShowcase />
+      <AboutWhyFadezy />
       <AboutCta />
       <Footer />
     </main>

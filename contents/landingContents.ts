@@ -6,6 +6,7 @@ export type LandingContents = Record<SupportedLanguages,{
             headline: [string,string,string],
             headlineTypingSpeed: number,
             description: string,
+            ctaText: string,
             backgroundVideo: {
                 videoSrc: string
             },
@@ -17,20 +18,13 @@ export type LandingContents = Record<SupportedLanguages,{
         "what-i-do": {
             heading: string,
             description: string,
-            "3d-hover-card": {
-                caption: string,
-                imgSrc: string
-            },
-            "image-parallax": {
-                caption: string,
-                imgSrc: string
-            },
-            "parallax-scrolling":{
-                caption: string,
-                description: string,
-                imgSrcs: [string,string,string],
-                imgsCaptions: [string,string,string]
-            }
+            services: Array<{ title: string; tagline: string; imageSrc: string }>
+        },
+        transformation: {
+            heading: string,
+            subheading: string,
+            before: { label: string; caption: string; imageSrc: string },
+            after: { label: string; caption: string; imageSrc: string }
         },
         "full-screen-transition": {
             heading: [string,string],
@@ -38,7 +32,11 @@ export type LandingContents = Record<SupportedLanguages,{
         },
         "trust-positioning": {
             ariaLabel: string,
-            statements: string[]
+            brands: Array<{
+                name: string,
+                tagline?: string,
+                variant: "sans-bold" | "serif" | "sans-wide" | "serif-display" | "geometric" | "serif-luxury"
+            }>
         },
         "projects": {
             heading: string,
@@ -50,30 +48,19 @@ export type LandingContents = Record<SupportedLanguages,{
                 projectLink: string
             }>,
         },
-        "services": {
-            heading: string,
-            description: string,
-            services: [
-                {
-                    caption: string,
-                    description: string
-                },
-                {
-                    caption: string,
-                    description: string
-                },
-                {
-                    caption: string,
-                    description: string
-                },
-                {
-                    caption: string,
-                    description: string
-                },
-            ]
-        },
         "get-in-touch": {
             heading: string,
+            description: string,
+            form: {
+                nameLabel: string,
+                namePlaceholder: string,
+                emailLabel: string,
+                emailPlaceholder: string,
+                messageLabel: string,
+                messagePlaceholder: string,
+                submitLabel: string,
+                ariaLabel: string
+            },
             contacts: [
                 {
                     type: string,
@@ -117,12 +104,22 @@ export type LandingContents = Record<SupportedLanguages,{
         }
 }>
 
+const whatWeDoImages = {
+  cinematic: "/assets/projectThumbnail/faderoom.png",
+  websites:
+    "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1400&q=85",
+  social: "/assets/projectThumbnail/arbarber.png",
+  positioning:
+    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1400&q=85",
+} as const;
+
 export const landingContents: LandingContents = {
     "en": {
         hero: {
-            headline: ["Modern","Digital Presence","For Your Salon"],
-            headlineTypingSpeed: 220,
-            description: "I’m We help salons and barbershops grow with modern websites, online bookings, and brand presence. Get your free demo today.",
+            headline: ["Digital Presence","for Premium","Barbershops"],
+            headlineTypingSpeed: 280,
+            description: "A luxury creative studio crafting cinematic brands for elite barbershops.",
+            ctaText: "Begin Your Brand",
             backgroundVideo: {
                 videoSrc: "/assets/background.mp4"
             },
@@ -133,20 +130,42 @@ export const landingContents: LandingContents = {
         },
         "what-i-do": {
             heading: "What we do",
-            description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence.",
-            "3d-hover-card": {
-                caption: "Modern salon websites",
-                imgSrc: "/assets/home%20page/barber%20saloon%20web.jpg"
+            description: "We build luxury barber brands through restraint, visuals, and precision.",
+            services: [
+                {
+                    title: "Cinematic Content",
+                    tagline: "Film-grade visuals crafted for elite barbershops.",
+                    imageSrc: whatWeDoImages.cinematic
+                },
+                {
+                    title: "Premium Websites",
+                    tagline: "Editorial web experiences designed to convert.",
+                    imageSrc: whatWeDoImages.websites
+                },
+                {
+                    title: "Social Identity",
+                    tagline: "A cohesive luxury presence across every channel.",
+                    imageSrc: whatWeDoImages.social
+                },
+                {
+                    title: "Luxury Brand Positioning",
+                    tagline: "From first impression to lasting prestige.",
+                    imageSrc: whatWeDoImages.positioning
+                }
+            ]
+        },
+        transformation: {
+            heading: "The transformation",
+            subheading: "From generic presence to a refined luxury barber brand.",
+            before: {
+                label: "Before",
+                caption: "Generic barber branding",
+                imageSrc: "/assets/home%20page/barber%20saloon%20web.jpg"
             },
-            "image-parallax": {
-                caption: "Brand presence",
-                imgSrc: "/assets/home%20page/Brand%20presence.jpg"
-            },
-            "parallax-scrolling":{
-                caption: "More ways we help you stand out.",
-                description: "From online booking to social presence, we create a dynamic experience that keeps your clients engaged and coming back.",
-                imgSrcs: ["/assets/lennon-cheng-yAeUPmbyS-0-unsplash.jpg","/assets/valentin-beauvais-yVUQlyRlJSw-unsplash.jpg","/assets/joel-fulgencio-01fAtHwYqo0-unsplash.jpg"],
-                imgsCaptions: ["slow", "fast","speedy"]
+            after: {
+                label: "After",
+                caption: "Premium luxury positioning",
+                imageSrc: "/assets/projectThumbnail/fade.png"
             }
         },
         "full-screen-transition": {
@@ -154,69 +173,62 @@ export const landingContents: LandingContents = {
             imgSrcs: ["/assets/pexels-cottonbro-8721339.jpg","/assets/pexels-cottonbro-8721318.jpg"]
         },
         "trust-positioning": {
-            ariaLabel: "Trust and positioning highlights",
-            statements: [
-                "Built for modern barbershops",
-                "Luxury-focused branding",
-                "Social-first strategy",
-                "Cinematic content systems"
+            ariaLabel: "Barbershop brands we have worked with",
+            brands: [
+                { name: "Fade Room", variant: "sans-bold" },
+                { name: "Hair Master", tagline: "Premium Grooming", variant: "serif-display" },
+                { name: "Trendz", variant: "sans-wide" },
+                { name: "Nazih", tagline: "Gents Salon", variant: "serif-luxury" },
+                { name: "Blade Co", variant: "geometric" },
+                { name: "Regent", variant: "serif" },
+                { name: "Iron Fade", variant: "sans-bold" },
+                { name: "Crown Cut", variant: "serif-luxury" }
             ]
         },
         "projects": {
             heading: "Our work",
-            description: "Barbershop and salon websites we've built. Modern, fast, and built to convert.",
+            description: "Selected barber brands — editorial, cinematic, built for prestige.",
             projects: [
                 {
                     caption: "THE FADE ROOM",
                     videoSrc: "/assets/projectThumbnail/fade.png",
-                    description: "Here's a sleek barbershop site with online booking, service menu, and gallery.",
+                    description: "Cinematic barbershop presence with refined booking flow.",
                     projectLink: "https://thfaderoom.netlify.app/"
                 },
                 {
                     caption: "HAIR MASTER",
                     videoSrc: "/assets/projectThumbnail/hairmaster.jpg",
-                    description: "Here's a Premium salon website with brand storytelling, team section, and easy booking integration.",
+                    description: "Luxury brand storytelling with editorial composition.",
                     projectLink: "https://hairmaste.netlify.app/"
                 },
                 {
                     caption: "TRENDZ HAIR SALON",
                     videoSrc: "/assets/projectThumbnail/trendz.jpeg",
-                    description: "Modern barbershop site with services, pricing, and WhatsApp contact. Mobile-first for clients on the go.",
+                    description: "Modern grooming brand with confident digital identity.",
                     projectLink: "https://trendzhairsalon.netlify.app/"
                 },
                 {
                     caption: "NAZIH GENTS SALON",
                     videoSrc: "/assets/projectThumbnail/nazih saloon.png",
-                    description: "Precision grooming salon website with services, gallery, and online appointment booking.",
+                    description: "Premium gents salon with gallery-led visual hierarchy.",
                     projectLink: "https://nazihsalon.netlify.app/"
                 },
        
             ],
         },
-        "services": {
-            heading: "Services",
-            description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence.",
-            services: [
-                {
-                    caption: "Salon & Barbershop Websites",
-                    description: "Clean, modern websites designed for your brand. Mobile-friendly so clients can find you and book on any device."
-                },
-                {
-                    caption: "Online Booking",
-                    description: "Integrate booking so clients can schedule appointments 24/7. Fewer no-shows, more bookings."
-                },
-                {
-                    caption: "Brand Presence",
-                    description: "From logo to socials, we help you look professional and stand out in your market."
-                },
-                {
-                    caption: "Hosting & Support",
-                    description: "We host and maintain your site so you can focus on your clients. Fast, secure, and always up."
-                },
-            ]
-        },
         "get-in-touch": {
             heading: "Get in touch",
+            description: "Elevate your barbershop brand. We respond with intention.",
+            form: {
+                nameLabel: "Name",
+                namePlaceholder: "Your name",
+                emailLabel: "Email",
+                emailPlaceholder: "your@email.com",
+                messageLabel: "Message",
+                messagePlaceholder: "Tell us about your barbershop vision",
+                submitLabel: "Send inquiry",
+                ariaLabel: "Contact inquiry form"
+            },
             contacts: [
                 {
                     type: "whatsapp",
@@ -238,13 +250,13 @@ export const landingContents: LandingContents = {
             link: "#get-in-touch"
         },
         "testimonials": {
-            heading: "What our clients say",
+            heading: "Client words",
             prevLabel: "Previous testimonial",
             nextLabel: "Next testimonial",
             items: [
-                { quote: "FADEZY gave our barbershop a modern site and online booking. Clients love it.", author: "Alex M.", role: "Classic Cuts Barbershop", imageSrc: "/assets/pexels-leeloothefirst-7818239.jpg" },
-                { quote: "Professional, fast, and they really understand the salon business.", author: "Sarah L.", role: "Luxe Hair Studio", imageSrc: "/assets/pexels-cottonbro-8721339.jpg" },
-                { quote: "Our new website brings in more bookings. Highly recommend.", author: "James K.", role: "The Gentleman's Salon", imageSrc: "/assets/pexels-cottonbro-8721318.jpg" }
+                { quote: "Fadezy transformed our barbershop into a luxury brand. The presence feels cinematic.", author: "Marcus Reid", role: "The Fade Room", imageSrc: "/assets/pexels-leeloothefirst-7818239.jpg" },
+                { quote: "Minimal, confident, premium. Exactly the editorial direction we wanted.", author: "Daniel Cole", role: "Hair Master", imageSrc: "/assets/pexels-cottonbro-8721339.jpg" },
+                { quote: "Our digital identity now matches the quality of our craft.", author: "James K.", role: "Nazih Gents Salon", imageSrc: "/assets/pexels-cottonbro-8721318.jpg" }
             ]
         },
         "pricing": {
@@ -302,9 +314,10 @@ export const landingContents: LandingContents = {
     
     "ar": {
         hero: {
-            headline: ["حضور","رقمي حديث","لصالونك"],
-            headlineTypingSpeed: 200,
-            description: "نساعد الصالونات ومحلات الحلاقة على النمو عبر مواقع حديثة وحجوزات أونلاين ووجود علامة تجارية. احصل على عرض تجريبي مجاني اليوم.",
+            headline: ["حضور رقمي","لصالونات","الحلاقة الفاخرة"],
+            headlineTypingSpeed: 280,
+            description: "استوديو إبداعي فاخر يصنع علامات سينمائية لصالونات الحلاقة الراقية.",
+            ctaText: "ابدأ علامتك",
             backgroundVideo: {
                 videoSrc: "/assets/background.mp4"
             },
@@ -315,20 +328,42 @@ export const landingContents: LandingContents = {
         },
         "what-i-do": {
             heading: "ماذا نقدم",
-            description: "نساعد الصالونات ومحلات الحلاقة على النمو عبر مواقع حديثة وحجوزات أونلاين ووجود علامة تجارية.",
-            "3d-hover-card": {
-                caption: "مواقع صالونات حديثة",
-                imgSrc: "/assets/home%20page/barber%20saloon%20web.jpg"
+            description: "نبني علامات حلاقة فاخرة عبر البساطة والصورة والدقة.",
+            services: [
+                {
+                    title: "محتوى سينمائي",
+                    tagline: "مرئيات بجودة سينمائية لصالونات الحلاقة الراقية.",
+                    imageSrc: whatWeDoImages.cinematic
+                },
+                {
+                    title: "مواقع فاخرة",
+                    tagline: "تجارب ويب تحريرية مصممة للتحويل.",
+                    imageSrc: whatWeDoImages.websites
+                },
+                {
+                    title: "هوية اجتماعية",
+                    tagline: "حضور فاخر متسق عبر كل القنوات.",
+                    imageSrc: whatWeDoImages.social
+                },
+                {
+                    title: "تموضع علامة فاخر",
+                    tagline: "من الانطباع الأول إلى الهيبة الدائمة.",
+                    imageSrc: whatWeDoImages.positioning
+                }
+            ]
+        },
+        transformation: {
+            heading: "التحول",
+            subheading: "من حضور عام إلى علامة حلاقة فاخرة ومكرّسة.",
+            before: {
+                label: "قبل",
+                caption: "علامة حلاقة تقليدية",
+                imageSrc: "/assets/home%20page/barber%20saloon%20web.jpg"
             },
-            "image-parallax": {
-                caption: "الوجود والعلامة التجارية",
-                imgSrc: "/assets/home%20page/Brand%20presence.jpg"
-            },
-            "parallax-scrolling":{
-                caption: "المزيد من الطرق لتميزك.",
-                description: "من الحجز أونلاين إلى التواجد على وسائل التواصل، نخلق تجربة ديناميكية تبقي عملاءك مهتمين وعائدين.",
-                imgSrcs: ["/assets/lennon-cheng-yAeUPmbyS-0-unsplash.jpg","/assets/valentin-beauvais-yVUQlyRlJSw-unsplash.jpg","/assets/joel-fulgencio-01fAtHwYqo0-unsplash.jpg"],
-                imgsCaptions: ["بطيء", "سريع", "سريع جداً"]
+            after: {
+                label: "بعد",
+                caption: "تموضع فاخر ومميز",
+                imageSrc: "/assets/projectThumbnail/fade.png"
             }
         },
         "full-screen-transition": {
@@ -336,17 +371,21 @@ export const landingContents: LandingContents = {
             imgSrcs: ["/assets/pexels-cottonbro-8721339.jpg","/assets/pexels-cottonbro-8721318.jpg"]
         },
         "trust-positioning": {
-            ariaLabel: "أبرز نقاط الثقة والتموضع",
-            statements: [
-                "مصمم لصالونات الحلاقة الحديثة",
-                "هوية بصرية فاخرة",
-                "استراتيجية تركز على وسائل التواصل",
-                "أنظمة محتوى سينمائية"
+            ariaLabel: "علامات صالونات الحلاقة التي عملنا معها",
+            brands: [
+                { name: "Fade Room", variant: "sans-bold" },
+                { name: "Hair Master", tagline: "Premium Grooming", variant: "serif-display" },
+                { name: "Trendz", variant: "sans-wide" },
+                { name: "Nazih", tagline: "Gents Salon", variant: "serif-luxury" },
+                { name: "Blade Co", variant: "geometric" },
+                { name: "Regent", variant: "serif" },
+                { name: "Iron Fade", variant: "sans-bold" },
+                { name: "Crown Cut", variant: "serif-luxury" }
             ]
         },
         "projects": {
             heading: "أعمالنا",
-            description: "بعض أعمالنا السابقة في مواقع وصالات وحلول رقمية للصالونات ومحلات الحلاقة.",
+            description: "علامات حلاقة مختارة — تحريرية، سينمائية، مبنية للهيبة.",
             projects: [
                 {
                     caption: "قاعة الشخصيات التاريخية",
@@ -380,30 +419,19 @@ export const landingContents: LandingContents = {
                 }
             ],
         },
-        "services": {
-            heading: "الخدمات",
-            description: "نقدم مجموعة خدمات رقمية من بناء العلامة التجارية إلى أتمتة العمل.",
-            services: [
-                {
-                    caption: "تصميم الويب",
-                    description: "نصمم مواقع وواجهات أنيقة وسهلة الاستخدام وسريعة الاستجابة."
-                },
-                {
-                    caption: "تطوير الويب",
-                    description: "نبني واجهات حديثة باستخدام Next.js وReact وTypeScript ومكونات قابلة لإعادة الاستخدام."
-                },
-                {
-                    caption: "تطوير إضافات Chrome",
-                    description: "نساعدك في أتمتة المهام المتكررة على الويب وتوفير وقتك."
-                },
-                {
-                    caption: "استضافة الويب وCloudflare",
-                    description: "نستضيف موقعك على مزودين موثوقين ونضبط Cloudflare للسرعة والأمان."
-                },
-            ]
-        },
         "get-in-touch": {
             heading: "تواصل معنا",
+            description: "ارتقِ بعلامة صالون الحلاقة. نرد بعناية ووضوح.",
+            form: {
+                nameLabel: "الاسم",
+                namePlaceholder: "اسمك",
+                emailLabel: "البريد الإلكتروني",
+                emailPlaceholder: "your@email.com",
+                messageLabel: "الرسالة",
+                messagePlaceholder: "أخبرنا عن رؤية صالونك",
+                submitLabel: "إرسال",
+                ariaLabel: "نموذج التواصل"
+            },
             contacts: [
                 {
                     type: "واتساب",
@@ -425,13 +453,13 @@ export const landingContents: LandingContents = {
             link: "#get-in-touch"
         },
         "testimonials": {
-            heading: "آراء العملاء",
+            heading: "كلمات العملاء",
             prevLabel: "الشهادة السابقة",
             nextLabel: "الشهادة التالية",
             items: [
-                { quote: "صممت FADEZY لنا موقعاً حديثاً وحجوزات أونلاين، العملاء سعداء.", author: "Alex M.", role: "Classic Cuts Barbershop", imageSrc: "/assets/pexels-leeloothefirst-7818239.jpg" },
-                { quote: "احترافية وسرعة وفهم حقيقي لقطاع الصالونات.", author: "Sarah L.", role: "Luxe Hair Studio", imageSrc: "/assets/pexels-cottonbro-8721339.jpg" },
-                { quote: "الموقع الجديد زاد الحجوزات، ننصح به بشدة.", author: "James K.", role: "The Gentleman's Salon", imageSrc: "/assets/pexels-cottonbro-8721318.jpg" }
+                { quote: "حوّلت Fadezy صالوننا إلى علامة فاخرة. الحضور يبدو سينمائياً.", author: "Marcus Reid", role: "The Fade Room", imageSrc: "/assets/pexels-leeloothefirst-7818239.jpg" },
+                { quote: "بسيط، واثق، فاخر. بالضبط التوجه التحريري الذي أردناه.", author: "Daniel Cole", role: "Hair Master", imageSrc: "/assets/pexels-cottonbro-8721339.jpg" },
+                { quote: "هويتنا الرقمية أصبحت بمستوى جودة حرفتنا.", author: "James K.", role: "Nazih Gents Salon", imageSrc: "/assets/pexels-cottonbro-8721318.jpg" }
             ]
         },
         "pricing": {

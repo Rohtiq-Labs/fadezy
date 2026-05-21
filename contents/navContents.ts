@@ -1,6 +1,6 @@
 import { SupportedLanguages } from "./supportedLanguagesData";
 
-export type NavItemKey = "home" | "work" | "services" | "howItWorks" | "about" | "contact";
+export type NavItemKey = "home" | "work" | "services" | "about" | "contact";
 
 export type NavContents = Record<SupportedLanguages, Record<NavItemKey, string>>;
 
@@ -9,7 +9,6 @@ export const navContents: NavContents = {
     home: "Home",
     work: "Work",
     services: "Services",
-    howItWorks: "How It Works",
     about: "About",
     contact: "Contact"
   },
@@ -17,7 +16,6 @@ export const navContents: NavContents = {
     home: "الرئيسية",
     work: "أعمالنا",
     services: "الخدمات",
-    howItWorks: "كيف نعمل",
     about: "من نحن",
     contact: "تواصل"
   }

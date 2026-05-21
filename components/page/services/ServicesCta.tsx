@@ -1,10 +1,9 @@
 "use client";
 
+import LuxuryCtaButton from "@/components/utilities/buttons/LuxuryCtaButton";
 import SectionContainer from "@/components/utilities/containers/SectionContainer";
-import ArticleContainer from "@/components/utilities/containers/ArticleContainer";
-import { useCurrentLanguages } from "@/contents/languageSupportHooks";
 import { servicesContents } from "@/contents/servicesContents";
-import Link from "next/link";
+import { useCurrentLanguages } from "@/contents/languageSupportHooks";
 import { FC } from "react";
 
 const ServicesCta: FC = () => {
@@ -13,26 +12,23 @@ const ServicesCta: FC = () => {
 
   return (
     <SectionContainer
-      tight
-      className="flex flex-col gap-12 pb-12"
+      id="services-cta"
+      className="bg-brand-bg-dark text-footer-text !mt-0 py-[clamp(96px,14vw,160px)]"
       aria-labelledby="services-cta-heading"
     >
-      <ArticleContainer
-        title={headline}
-        description={subtext}
-        scrollTriggerVars={{
-          start: () => "bottom bottom",
-          end: () => "bottom bottom"
-        }}
-      />
-      <div className="w-full flex justify-center">
-        <Link
-          href={link}
-          aria-label={buttonText}
-          className="inline-flex items-center justify-center font-acumin-wide-light font-semibold text-primary-dark px-8 py-3 rounded-sm bg-cta-gradient hover:opacity-95 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-brand-bg"
+      <div className="flex flex-col items-start gap-8 max-w-[min(800px,100%)]">
+        <h2
+          id="services-cta-heading"
+          className="font-blinker font-light uppercase text-[clamp(40px,calc(((100vw-1024px)/896*28)+40px),72px)] leading-[1] tracking-[0.03em] text-footer-text"
         >
+          {headline}
+        </h2>
+        <p className="font-acumin-wide-light text-[clamp(15px,calc(((100vw-1024px)/896*4)+15px),18px)] leading-[1.6] text-footer-link max-w-md">
+          {subtext}
+        </p>
+        <LuxuryCtaButton href={link} variant="light" ariaLabel={buttonText}>
           {buttonText}
-        </Link>
+        </LuxuryCtaButton>
       </div>
     </SectionContainer>
   );
