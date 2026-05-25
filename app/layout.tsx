@@ -5,6 +5,7 @@ import AnimatePresenceContextProvider from "@/lib/framerMotion/AnimatePresenceCo
 import { headers } from "next/headers";
 import { langQueryHeaderName } from "@/contents/supportedLanguagesData";
 import FixedHeader from "@/components/header/FixedHeader";
+import JsonLd from "@/components/seo/JsonLd";
 import BlankLoadingContextProvider from "@/components/loader/BlankLoadingContextProvider";
 // import SplashCursor from "@/components/utilities/cursons/SplashCursor";
 import { metadataTags } from "@/metadatas/metadata";
@@ -22,6 +23,7 @@ export default async function RootLayout({
     return (
         <html lang={lang} suppressHydrationWarning>
             <body suppressHydrationWarning>
+                <JsonLd />
                 <BlankLoadingContextProvider>
                     <FixedHeader />
                     {/* <SplashCursor /> */}

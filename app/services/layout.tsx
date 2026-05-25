@@ -1,27 +1,18 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/metadatas/page-metadata";
 import { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title: "Services | Premium Barber Branding & Web Design | FADEZY",
+export const metadata = createPageMetadata({
+  title: "Services — Premium Barber Branding",
   description:
-    "Luxury barber branding, premium barber websites, cinematic content, and digital identity systems for elite modern barbershops by Fadezy.",
+    "Fadezy services: cinematic content, premium websites, social identity, and luxury brand positioning for elite barbershops.",
+  path: "/services",
   keywords: [
     "premium barber branding",
     "luxury barber website",
-    "barbershop web design",
     "barber branding agency",
-    "barber shop marketing",
-    "cinematic barber branding",
-    "modern barbershop design",
     "Fadezy services",
   ],
-  openGraph: {
-    title: "Services | Luxury Barber Digital Studio | FADEZY",
-    description:
-      "Premium digital services for elite barbershops — websites, identity, cinematic content, and brand elevation.",
-    type: "website",
-  },
-};
+});
 
 const ServicesLayout = ({ children }: { children: ReactNode }): ReactNode => {
   return children;

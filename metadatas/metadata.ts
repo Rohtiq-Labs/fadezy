@@ -1,15 +1,51 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import {
+  BRAND_KEYWORDS,
+  CONTACT,
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+} from "@/lib/seo/site-config";
+
+const defaultTitle = "Fadezy — Luxury Barber Branding & Digital Studio";
 
 export const metadataTags: Metadata = {
-  title: "FADEZY | Digital Agency for Barbershops & Salons",
-  description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence. Get your free demo today.",
-  keywords: ["digital agency", "barbershop", "salon", "website", "online booking", "brand presence", "barbershop website", "salon marketing"],
-  publisher: "FADEZY",
-  authors: [{ name: "FADEZY", url: "https://fadezy.com" }],
-  robots: "index, follow",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_TAGLINE,
+  applicationName: SITE_NAME,
+  keywords: [
+    ...BRAND_KEYWORDS,
+    "luxury barber branding",
+    "premium barbershop website",
+    "barber branding agency",
+    "barbershop web design",
+    "cinematic barber branding",
+    "modern barbershop design",
+    "barber shop marketing",
+    "premium barber website",
+  ],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/assets/icon%20white%20blck%20logo.png",
-    apple: "/assets/icon%20white%20blck%20logo.png"
+    apple: "/assets/icon%20white%20blck%20logo.png",
   },
   formatDetection: {
     email: false,
@@ -17,36 +53,39 @@ export const metadataTags: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "https://fadezy.com",
+    canonical: SITE_URL,
     languages: {
-      en: "en-US",
-      ar: "ar"
-    }
+      en: `${SITE_URL}?lang=en`,
+      ar: `${SITE_URL}?lang=ar`,
+    },
   },
-  category: "business",
-  metadataBase: new URL("https://fadezy.com"),
+  category: "Business",
   openGraph: {
-    siteName: "FADEZY",
     type: "website",
-    title: "FADEZY | Digital Agency for Barbershops & Salons",
-    description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence.",
-    images: [{
-      url: "/assets/thumbnail.png",
-      type: "image/png",
-      width: "1920",
-      height: "1080",
-    }],
-    url: "https://fadezy.com",
     locale: "en_US",
-    emails: "hello@fadezy.com",
-    phoneNumbers: "+1234567890",
+    alternateLocale: ["ar"],
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: defaultTitle,
+    description: SITE_TAGLINE,
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Fadezy — luxury barber branding and cinematic digital studio",
+      },
+    ],
   },
   twitter: {
-    site: "@fadezy",
-    creator: "@fadezy",
     card: "summary_large_image",
-    title: "FADEZY | Digital Agency for Barbershops & Salons",
-    description: "We help salons and barbershops grow with modern websites, online bookings, and brand presence.",
-    images: "/assets/thumbnail.png",
-  }
+    title: defaultTitle,
+    description: SITE_TAGLINE,
+    images: [DEFAULT_OG_IMAGE],
+  },
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
+
+export { CONTACT, SITE_NAME, SITE_TAGLINE, SITE_URL };

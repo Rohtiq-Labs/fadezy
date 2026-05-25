@@ -1,24 +1,13 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/metadatas/page-metadata";
 import { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title: "Contact | Luxury Barber Branding Studio | FADEZY",
+export const metadata = createPageMetadata({
+  title: "Contact — Start Your Brand",
   description:
-    "Start your premium barber brand transformation. Contact Fadezy for cinematic websites, luxury branding, and digital identity for elite barbershops.",
-  keywords: [
-    "barber branding agency contact",
-    "luxury barber website inquiry",
-    "premium barbershop design",
-    "barber shop marketing",
-    "Fadezy contact",
-  ],
-  openGraph: {
-    title: "Contact Fadezy | Premium Barber Digital Studio",
-    description:
-      "Inquire about cinematic branding and luxury digital experiences for your barbershop.",
-    type: "website",
-  },
-};
+    "Contact Fadezy for luxury barber branding, premium websites, and cinematic digital experiences. Start your barbershop brand transformation.",
+  path: "/contact",
+  keywords: ["Fadezy contact", "barber branding inquiry", "luxury barber website"],
+});
 
 const ContactLayout = ({ children }: { children: ReactNode }): ReactNode => {
   return children;
