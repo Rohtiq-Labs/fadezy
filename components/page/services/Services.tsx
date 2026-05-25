@@ -19,7 +19,7 @@ const Services: FC = () => {
     >
       <ServicesHero />
       <ServicesIntro />
-      <ServicesShowcase />
+   
       <ServicesFeatured />
       <ServicesTransformation />
       <ServicesProcess />

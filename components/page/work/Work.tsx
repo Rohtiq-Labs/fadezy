@@ -3,7 +3,6 @@
 import WorkHero from "./WorkHero";
 import FeaturedProjects from "./FeaturedProjects";
 import WorkTransformation from "./WorkTransformation";
-import WorkGallery from "./WorkGallery";
 import ResultsImpact from "./ResultsImpact";
 import WorkTestimonials from "./WorkTestimonials";
 import WorkCta from "./WorkCta";
@@ -20,7 +19,7 @@ const Work: FC = () => {
       <WorkHero />
       <FeaturedProjects />
       <WorkTransformation />
-      <WorkGallery />
+    
       <ResultsImpact />
       <WorkTestimonials />
       <WorkCta />

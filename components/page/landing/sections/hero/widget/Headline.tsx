@@ -3,6 +3,7 @@
 import CustomLandingAnimation from "@/components/utilities/animations/landing/CustomLandingAnimation";
 import MaskAndMoveLandingAnimation from "@/components/utilities/animations/landing/MaskAndMoveLandingAnimation";
 import LuxuryCtaButton from "@/components/utilities/buttons/LuxuryCtaButton";
+import { cinematicHeroInnerClass } from "@/components/utilities/heroes/CinematicPageHero";
 import SpacingLgContainer from "@/components/utilities/containers/SpacingLgContainer";
 import HeadlineHero from "@/components/utilities/headings/HeadlineHero";
 import { landingContents } from "@/contents/landingContents";
@@ -14,7 +15,7 @@ const Headline: FC = () => {
   const { headline, description, ctaText } = landingContents[lang].hero;
 
   return (
-    <SpacingLgContainer className="h-full flex flex-col justify-center items-start gap-8 portrait:h-auto portrait:min-h-0 overflow-visible luxury-fade-in">
+    <SpacingLgContainer className={cinematicHeroInnerClass}>
       <HeadlineHero className="flex flex-col uppercase h-fit max-w-full tracking-[0.02em]">
         <MaskAndMoveLandingAnimation duration={1} delay={0.4}>
           <span className="font-light block">{headline[0]}</span>

@@ -21,7 +21,7 @@ const AboutPage: FC = () => {
       <AboutPhilosophy />
       <AboutWhoWeAre />
       <AboutApproach />
-      <AboutShowcase />
+    
       <AboutWhyFadezy />
       <AboutCta />
       <Footer />
