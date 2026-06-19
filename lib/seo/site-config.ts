@@ -1,6 +1,6 @@
 /** Canonical production URL — used for metadata, sitemap, and structured data */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://fadezy.rohtiqlabs.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://fadezyrl.com";
 
 export const SITE_NAME = "Fadezy";
 
